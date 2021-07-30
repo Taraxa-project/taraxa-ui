@@ -7,7 +7,8 @@ export default {
   title: "Components/Button",
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    color: { control: 'string'},
+    disabled: { control: 'boolean'}
   },
 } as Meta;
 
@@ -17,4 +18,4 @@ export const Primary = Template.bind({});
 Primary.args = { label: "Primary", size: "large" };
 
 export const Secondary = Template.bind({});
-Secondary.args = { ...Primary.args, primary: false, label: "Secondary" };
+Secondary.args = { label: "Secondary", size: "large" };

@@ -1,37 +1,38 @@
 import React from "react";
 import "./button.css";
+import { Button as MButton, CssBaseline, ThemeProvider } from '@material-ui/core';
+import theme from "../theme";
 
 export interface ButtonProps  {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: "small" | "medium" | "large";
+  color?: "inherit" | "primary" | "secondary" | "default" | undefined;
+  disabled?: boolean;
   label: string;
+  size?: "small" | "medium" | "large";
+  variant? : 'contained' | 'outlined' | 'text';
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
 };
 
 const Button = ({
-  primary = true,
-  backgroundColor,
-  size = "medium",
+  color,
+  disabled,
   onClick,
   label,
+  size,
+  variant
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={backgroundColor ? { backgroundColor }: {}}
-      onClick={onClick}
-    >
-      {label}
-    </button>
+    <ThemeProvider theme={theme}>
+    <CssBaseline />
+      <MButton 
+        color={color} 
+        disabled={disabled} 
+        onClick={onClick} 
+        size={size} 
+        variant={variant}>{label}
+      </MButton>
+    </ThemeProvider>
   );
 };
 
