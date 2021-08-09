@@ -3,6 +3,7 @@ import "./title.css";
 import { CssBaseline, ThemeProvider, Typography } from "@material-ui/core";
 import { Variant } from "@material-ui/core/styles/createTypography";
 import theme from "../theme";
+import Font from 'react-font'
 
 
 export interface TitleProps  {
@@ -19,9 +20,11 @@ const Title = ({
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Typography variant={variant} color={color}>
-        {label}
-      </Typography>
+      <Font family='Poppins'>
+        <Typography variant={variant} color={color}>
+          {label}
+        </Typography>
+      </Font>
     </ThemeProvider>
   );
 };

@@ -3,16 +3,40 @@ import { createTheme } from '@material-ui/core/styles'
 const theme = createTheme({
   typography: {
     h1: {
-      fontFamily: "Comic Sans MS"
+      fontFamily: [
+        'Poppins',
+        'sans-serif',
+      ].join(','),
     },
     h2: {
-      fontFamily: "Arial"
+      fontFamily: [
+        'Poppins',
+        'sans-serif',
+      ].join(','),
     },
     h3: {
-      fontFamily: "Times New Roman"
+      fontFamily: [
+        'Poppins',
+        'sans-serif',
+      ].join(','),
     },
     h4: {
-      fontFamily: "Poppins"
+      fontFamily: [
+        'Poppins',
+        'sans-serif',
+      ].join(','),
+    },
+    h5: {
+      fontFamily: [
+        'Poppins',
+        'sans-serif',
+      ].join(','),
+    },
+    h6: {
+      fontFamily: [
+        'Poppins',
+        'sans-serif',
+      ].join(','),
     },
     button: {
       fontFamily: "Roboto"
@@ -20,7 +44,7 @@ const theme = createTheme({
   },
   palette: {
     text:{
-      primary: "#FF5733"
+      primary: "#000"
     },
     common: {
       black: "#000",

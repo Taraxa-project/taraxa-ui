@@ -1,6 +1,5 @@
 import Button from "./components/Button";
 import Title from "./components/Title";
-import "@fontsource/poppins";
-import "@fontsource/inter";
+import Card from './components/Card';
 
-export { Button, Title };
+export { Button, Title, Card };
