@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  background-color: #252732;
+  color: #fff;
+  font-family: 'Inter, sans-serif' !important;
+}
+
+.logo {
+  grid-row: 1;
+  margin-left: 20.5%;
+  padding-top: 2%;
+  margin-bottom: 2%;
+}
+
+.description {
+  width: 45%;
+  grid-row: 2;
+  margin-left: 20.5%;
+  margin-bottom: 4%;
+}
+
+.bottomNavigation {
+  grid-row: 3;
+  background-color: #252732 !important;
+  padding-bottom: 2% !important;
+  margin-top: 2% !important;
+}
+
+.bottomNavigationItem {
+  color: #fff !important;
+}
+
+.footerList {
+  grid-row: 4;
+  margin-left: 17.5% !important;
+}

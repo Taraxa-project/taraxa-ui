@@ -1,0 +1,26 @@
+.sidebar {
+  max-width: 240px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #1e2231;
+  color: #878ca4;
+  font-family: 'Inter, sans-serif' !important;
+}
+
+.itemOpened {
+  color: #fff !important;
+}
+
+.subItemOpened {
+  color: #fff !important;
+  background-color: #282c3e !important;
+  margin-left: 7.5% !important;
+  margin-right: 7.5% !important;
+  width: 85% !important;
+  border-radius: 8px !important;
+}
+
+.subItem {
+  margin-left: 7.5% !important;
+  margin-right: 7.5% !important;
+  width: 85% !important;
+}
