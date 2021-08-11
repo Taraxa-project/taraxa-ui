@@ -2,6 +2,7 @@ import React from "react";
 import "./button.css";
 import { Button as MButton, CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
+import Font from "react-font";
 
 export interface ButtonProps  {
   color?: "inherit" | "primary" | "secondary" | "default" | undefined;
@@ -9,6 +10,7 @@ export interface ButtonProps  {
   label: string;
   size?: "small" | "medium" | "large";
   variant? : 'contained' | 'outlined' | 'text';
+  disableElevation?: boolean;
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
@@ -20,17 +22,20 @@ const Button = ({
   onClick,
   label,
   size,
-  variant
+  variant,
+  disableElevation
 }: ButtonProps) => {
   return (
     <ThemeProvider theme={theme}>
     <CssBaseline />
       <MButton 
-        color={color} 
+        color={color}
         disabled={disabled} 
         onClick={onClick} 
         size={size} 
-        variant={variant}>{label}
+        variant={variant}
+        disableElevation={disableElevation}>
+        <Font family='Inter'><span>{label}</span></Font>
       </MButton>
     </ThemeProvider>
   );

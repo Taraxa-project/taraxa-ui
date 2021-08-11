@@ -39,25 +39,17 @@ const theme = createTheme({
       ].join(','),
     },
     button: {
-      fontFamily: "Roboto"
-    }
+      fontFamily: "Inter",
+      fontSize: 12,
+    },
+    fontFamily: "Inter",
   },
   palette: {
-    text:{
-      primary: "#000"
-    },
-    common: {
-      black: "#000",
-      white: "#fff"
-    },
-    background: {
-      paper: "#fff",
-      default: "#fafafa"
-    },
     primary: {
-      light: "rgba(89, 210, 188, 1)",
-      main: "rgba(20, 160, 140, 1)",
-      dark: "rgba(0, 113, 95, 1)",
+      main: '#FFF',
+    },
+    secondary: {
+      main: '#15AC5B',
       contrastText: "#fff"
     },
   }

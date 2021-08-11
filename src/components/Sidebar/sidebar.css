@@ -1,5 +1,5 @@
 .sidebar {
-  max-width: 240px;
+  width: 250px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #1e2231;
   color: #878ca4;
@@ -8,19 +8,34 @@
 
 .itemOpened {
   color: #fff !important;
+  margin: 10% 0 !important;
+}
+
+.item {
+  margin: 10% 0 !important;
 }
 
 .subItemOpened {
   color: #fff !important;
   background-color: #282c3e !important;
-  margin-left: 7.5% !important;
-  margin-right: 7.5% !important;
+  margin: 10% 7.5% !important;
   width: 85% !important;
   border-radius: 8px !important;
 }
 
+.whiteLink {
+  text-decoration: none !important;
+  display: -webkit-inline-box !important;
+  color: #fff !important;
+}
+
+.grayLink {
+  text-decoration: none !important;
+  display: -webkit-inline-box !important;
+  color: #878ca4 !important;
+}
+
 .subItem {
-  margin-left: 7.5% !important;
-  margin-right: 7.5% !important;
   width: 85% !important;
+  margin: 10% 7.5% !important;
 }

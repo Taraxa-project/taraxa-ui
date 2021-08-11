@@ -1,34 +1,49 @@
 import React from "react";
-import { Card as MCard, CardContent, CssBaseline, makeStyles, ThemeProvider, Typography } from '@material-ui/core';
+import { Card as MCard, CardActions, CardContent, CssBaseline, makeStyles, ThemeProvider, Typography } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
+import Button from "../Button";
+
 
 
 export interface CardProps  {
-  label: string;
-  value: string;
+  title: string;
+  description: string;
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
+  onClickText?: string;
+  Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 };
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 225,
+    width: 250,
     minHeight: 125,
-    textAlign: "center",
-    backgroundColor: '#F2F2F2',
+    textAlign: "left",
+    backgroundColor: '#282C3E',
+    paddingLeft: "2%",
+    paddingRight: "1%",
   },
   label: {
-    fontSize: 14,
-    color: '#000',
-    fontFamily: 'Inter',
+    fontSize: 12,
+    marginTop: "5%",
+    marginBottom: "5%"
   },
-  pos: {
-    marginBottom: 12,
-  },
+  actions: {
+    display: "grid",
+    paddingLeft: '2%',
+    paddingRight: '8%',
+    marginBottom: "5%"
+  }
 });
 
 const Card = ({
-  value,
-  label,
+  title,
+  description,
+  onClick,
+  onClickText,
+  Icon
 }: CardProps) => {
   const classes = useStyles();
 
@@ -37,18 +52,20 @@ const Card = ({
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
-          <Typography color="textSecondary" variant="h4" component="h4" gutterBottom>
-            {value}
+          {Icon && <Icon/>}
+          <Typography color="primary" variant="h5" component="h5" gutterBottom>
+          <Font family="Poppins"><span>{title}</span></Font>
           </Typography>
           <Font family='Inter'>
-            <Typography className={classes.label} color="textSecondary">
-              {label}
+            <Typography className={classes.label} color="primary">
+              <Font family="Inter"><span>{description}</span></Font>
             </Typography>
           </Font>
         </CardContent>
-        {/* <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions> */}
+        {onClick && onClickText && 
+          <CardActions className={classes.actions}>
+            <Button disableElevation color="secondary" onClick={onClick} variant="contained" label={onClickText} size="small"></Button>
+          </CardActions>}
       </MCard>
     </ThemeProvider>
   );

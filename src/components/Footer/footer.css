@@ -7,7 +7,7 @@
 
 .logo {
   grid-row: 1;
-  margin-left: 20.5%;
+  margin-left: -23%;
   padding-top: 2%;
   margin-bottom: 2%;
 }
@@ -15,7 +15,7 @@
 .description {
   width: 45%;
   grid-row: 2;
-  margin-left: 20.5%;
+  margin-left: 35.8%;
   margin-bottom: 4%;
 }
 
@@ -32,5 +32,5 @@
 
 .footerList {
   grid-row: 4;
-  margin-left: 17.5% !important;
+  margin-left: 35.6% !important;
 }
