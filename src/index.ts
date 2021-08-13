@@ -1,7 +1,8 @@
 import Button from "./components/Button";
-import Title from "./components/Title";
+import Text from "./components/Text";
 import Card from './components/Card';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
-export { Button, Title, Card, Sidebar, Footer };
+export { Button, Text, Card, Sidebar, Footer, Header };

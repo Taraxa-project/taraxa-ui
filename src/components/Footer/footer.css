@@ -1,36 +1,48 @@
 .footer {
   width: 100%;
-  background-color: #252732;
+  background-color: #151823;
   color: #fff;
   font-family: 'Inter, sans-serif' !important;
 }
 
 .logo {
   grid-row: 1;
-  margin-left: -23%;
+  width: 70.5%;
+  border-top: 1px solid #40465f;
   padding-top: 2%;
+  margin-left: 11.5%;
   margin-bottom: 2%;
+  display: inline-flex;
+  align-items: center;
 }
 
 .description {
   width: 45%;
   grid-row: 2;
-  margin-left: 35.8%;
+  margin-left: 20.5%;
   margin-bottom: 4%;
 }
 
 .bottomNavigation {
   grid-row: 3;
-  background-color: #252732 !important;
+  background-color: #151823 !important;
   padding-bottom: 2% !important;
   margin-top: 2% !important;
 }
 
 .bottomNavigationItem {
   color: #fff !important;
+  justify-content: flex-end;
 }
 
 .footerList {
   grid-row: 4;
-  margin-left: 35.6% !important;
+  margin-left: 20.5% !important;
+  display: flex;
+  margin-bottom: 5%;
+  text-align: left;
+}
+
+.footerList p {
+  margin-right: 5%;
 }

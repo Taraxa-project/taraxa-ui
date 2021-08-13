@@ -52,6 +52,18 @@ const theme = createTheme({
       main: '#15AC5B',
       contrastText: "#fff"
     },
+    text: {
+      secondary: '#878CA4',
+    },
+  },
+  overrides: {
+    MuiAppBar: {
+      colorPrimary: {
+        backgroundColor: "#282C3E",
+        color: "#FFF"
+      },
+      fontFamily: 'Inter'
+    }
   }
 });
 

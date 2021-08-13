@@ -12,11 +12,15 @@ import theme from '../theme';
 import { BottomNavigationAction, CssBaseline, List, ListItem, ListItemText, ThemeProvider, Typography } from '@material-ui/core';
 import './footer.css';
 import Font from 'react-font';
+import Text from '../Text';
+
 
 export interface FooterProps  {
   items: { label: string; value: string; icon: "twitter" | "facebook" | "instagram" | "recent" | "favorite" | "location" | "discord" | "send"}[];
   showLabels: boolean;
   description?: string;
+  title: string;
+  Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   links?: { label: string; }[];
 };
 
@@ -24,17 +28,19 @@ const Footer = ({
   items,
   showLabels,
   description,
-  links
+  links,
+  title,
+  Icon
 }: FooterProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="footer">
         <div className="logo">
-          <Font family='Inter'><span>TARAXA</span></Font>
+          {Icon && <><Icon/><div style={{width: '20px'}}/> </>} <Text label={title} variant="h4" color="primary"/>
         </div>
         {description && <div className="description">
-          <Font family='Inter'><span>{description}</span></Font>
+          <Text label={description} variant="body1" color="textSecondary" style={{ textAlign: 'left'}}/>
         </div>}
         <BottomNavigation showLabels={showLabels} className="bottomNavigation">
           {items.map((item) => (
@@ -42,15 +48,11 @@ const Footer = ({
           ))}
         </BottomNavigation>
         {links && 
-          <List dense className="footerList">
+          <div className="footerList">
             {links.map((link, index) => (
-              <ListItem>
-                <ListItemText style={{  cursor: 'pointer' }}>
-                  <Font family='Inter'><span>{link.label}</span></Font>
-                </ListItemText>
-              </ListItem>
+              <Text label={link.label} variant="body1" color="textSecondary" style={{  cursor: 'pointer' }}/>
           ))}
-          </List>
+          </div>
         }
       </div>
     </ThemeProvider>

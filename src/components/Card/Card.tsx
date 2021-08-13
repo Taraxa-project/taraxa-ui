@@ -18,12 +18,13 @@ export interface CardProps  {
 
 const useStyles = makeStyles({
   root: {
-    width: 250,
-    minHeight: 125,
+    width: 280,
+    minHeight: 180,
     textAlign: "left",
     backgroundColor: '#282C3E',
     paddingLeft: "2%",
     paddingRight: "1%",
+    border: "1px solid #40465F"
   },
   label: {
     fontSize: 12,
@@ -35,6 +36,13 @@ const useStyles = makeStyles({
     paddingLeft: '2%',
     paddingRight: '8%',
     marginBottom: "5%"
+  },
+  bottomSpacing: {
+    marginBottom: '5%'
+  },
+  icon: {
+    marginBottom: '5%',
+    marginTop: '5%'
   }
 });
 
@@ -52,8 +60,8 @@ const Card = ({
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
-          {Icon && <Icon/>}
-          <Typography color="primary" variant="h5" component="h5" gutterBottom>
+          {Icon && <div className={classes.icon}><Icon/></div>}
+          <Typography color="primary" variant="h5" component="h5" className={classes.bottomSpacing}>
           <Font family="Poppins"><span>{title}</span></Font>
           </Typography>
           <Font family='Inter'>

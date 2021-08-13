@@ -1,34 +1,38 @@
 import React from "react";
-import "./title.css";
+import "./text.css";
 import { CssBaseline, ThemeProvider, Typography } from "@material-ui/core";
 import { Variant } from "@material-ui/core/styles/createTypography";
 import theme from "../theme";
 import Font from 'react-font'
 
 
-export interface TitleProps  {
+export interface TextProps  {
   label: string;
   variant: Variant;
   color: "inherit" | "initial" | "primary" | "secondary" | "textPrimary" | "textSecondary" | "error" | undefined;
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
 };
 
-const Title = ({
+const Text = ({
   label,
   variant,
-  color
-}: TitleProps) => {
+  color,
+  id,
+  className,
+  style
+}: TextProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Font family='Poppins'>
-        <Typography variant={variant} color={color}>
+        <Typography variant={variant} color={color} id={id} className={className} style={style}>
           {label}
         </Typography>
-      </Font>
     </ThemeProvider>
   );
 };
 
 
 
-export default Title;
+export default Text;

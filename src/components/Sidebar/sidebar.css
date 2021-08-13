@@ -1,14 +1,26 @@
 .sidebar {
   width: 250px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #1e2231;
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  background-color: #151823 !important;
   color: #878ca4;
   font-family: 'Inter, sans-serif' !important;
+}
+
+.sidebar a {
+  color: #878ca4 !important;
+  text-decoration: none !important;
+  display: -webkit-inline-box !important;
 }
 
 .itemOpened {
   color: #fff !important;
   margin: 10% 0 !important;
+}
+
+.itemOpened a {
+  text-decoration: none !important;
+  display: -webkit-inline-box !important;
+  color: #fff !important;
 }
 
 .item {
