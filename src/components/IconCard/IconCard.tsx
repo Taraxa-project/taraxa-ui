@@ -1,12 +1,13 @@
 import React from "react";
-import { Card as MCard, CardActions, CardContent, CssBaseline, makeStyles, ThemeProvider, Typography } from '@material-ui/core';
+import { Card as MCard, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
 import Button from "../Button";
+import useStyles from './iconcard-styles';
 
 
 
-export interface CardProps  {
+export interface IconCardProps  {
   title: string;
   description: string;
   onClick?: (
@@ -16,43 +17,15 @@ export interface CardProps  {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 };
 
-const useStyles = makeStyles({
-  root: {
-    width: 280,
-    minHeight: 180,
-    textAlign: "left",
-    backgroundColor: '#282C3E',
-    paddingLeft: "2%",
-    paddingRight: "1%",
-    border: "1px solid #40465F"
-  },
-  label: {
-    fontSize: 12,
-    marginTop: "5%",
-    marginBottom: "5%"
-  },
-  actions: {
-    display: "grid",
-    paddingLeft: '2%',
-    paddingRight: '8%',
-    marginBottom: "5%"
-  },
-  bottomSpacing: {
-    marginBottom: '5%'
-  },
-  icon: {
-    marginBottom: '5%',
-    marginTop: '5%'
-  }
-});
 
-const Card = ({
+
+const IconCard = ({
   title,
   description,
   onClick,
   onClickText,
   Icon
-}: CardProps) => {
+}: IconCardProps) => {
   const classes = useStyles();
 
   return (
@@ -79,4 +52,4 @@ const Card = ({
   );
 }
 
-export default Card;
+export default IconCard;

@@ -53,8 +53,10 @@
     "@fontsource/poppins": "^4.5.0",
     "@material-ui/icons": "^4.11.2",
     "@rollup/plugin-url": "^6.1.0",
+    "@types/react-modal": "^3.12.1",
     "material-ui-icons": "^1.0.0-beta.36",
     "react-font": "^1.2.1",
+    "react-modal": "^3.14.3",
     "typeface-poppins": "^1.1.13"
   }
 }
