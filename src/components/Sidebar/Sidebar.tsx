@@ -4,7 +4,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import theme from "../theme";
 import Font from "react-font";
-import './sidebar.css';
+import '../app.scss';
 import { useState } from "react";
 
 
@@ -14,20 +14,16 @@ export interface SidebarProps  {
   depthStep?: 0;
   depth?: 0;
   className?: string;
-  items: { label: string, Link?: JSX.Element, Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>,  items?: {label: string, Link?: JSX.Element, Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>}[] }[];
+  items: { label?: string, name?: string; Link?: JSX.Element,  items?: {label?: string, name?: string, Link?: JSX.Element}[] }[];
 };
 
 interface SidebarItemProps  {
-  label: string; 
+  label?: string; 
+  name?: string;
   depthStep: number;
   depth: number;
   subItem: boolean;
-  activeParent: string;
-  setActiveParent: React.Dispatch<React.SetStateAction<any>>;
-  activeChild: string;
-  setActiveChild: React.Dispatch<React.SetStateAction<any>>;
-  items: { label: string, Link?: JSX.Element, Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>,  items?: {label: string, Link?: JSX.Element, Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>}[] }[];
-  Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+  items: { label?: string, name?: string; Link?: JSX.Element, items?: {label?: string, name?: string, Link?: JSX.Element}[] }[];
   Link?: JSX.Element;
 };
 
@@ -39,8 +35,7 @@ const Sidebar = ({
   items,
   className,
 }: SidebarProps) => {
-  const [activeParent, setActiveParent] = useState('');
-  const [activeChild, setActiveChild] = useState('');
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -51,15 +46,11 @@ const Sidebar = ({
               key={`${sidebarItem.label}${index}`}
               depthStep={depthStep ? depthStep : 10}
               depth={depth ? depth : 0}
-              activeParent={activeParent}
-              setActiveParent={setActiveParent}
-              activeChild={activeChild}
-              setActiveChild={setActiveChild}
               subItem={false}
               items={sidebarItem.items ? sidebarItem.items : []}
-              label={sidebarItem.label}
-              Icon={sidebarItem.Icon ? sidebarItem.Icon : undefined}
+              label={sidebarItem.label ? sidebarItem.label : ""}
               Link={sidebarItem.Link ? sidebarItem.Link : undefined}
+              name={sidebarItem.name ? sidebarItem.name : undefined}
             />
           ))}
         </List>
@@ -68,23 +59,19 @@ const Sidebar = ({
   );
 }
 
-const SidebarItem = ({ label, items, depthStep, depth, subItem, activeParent, setActiveParent, activeChild, setActiveChild, Icon, Link} : SidebarItemProps) => {
-  const [open, setOpen] = useState(true);
+const SidebarItem = ({ label, items, depthStep, depth, subItem, Link, name} : SidebarItemProps) => {
+  const pathname = window.location.pathname.length > 1 ? window.location.pathname.substring(1) : window.location.pathname;
+  if(name === pathname) console.log(pathname)
   return (
     <>
-      <ListItem className={open && subItem && activeChild === label ? 'subItemOpened' : open && activeParent === label ? 'itemOpened' : subItem ? 'subItem' : 'item'} button dense
-      onClick={() =>  { 
-        if(subItem) setActiveChild(label);
-      }}>
-        {Link ? <div className={open && subItem && activeChild === label ? 'whiteLink' : open && activeParent === label ? 'whiteLink' : 'grayLink'}>
-            {Icon && <Icon/>}
+      <ListItem className={name === pathname && subItem ? 'subItemOpened' : name === pathname && !subItem ? 'itemOpened' : name === 'dashboard' && pathname === '/' && !subItem ? 'itemOpened' : subItem ? 'subItem' : !subItem && items.length < 1 ? 'soloItem' : 'item'} button dense>
+        {Link ? <div className='grayLink'>
             <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : !items ? (depth + 2) * depthStep : 15, marginTop: 0 }}>
-              <Font family='Inter'>{Link}</Font>
+              {Link}
             </ListItemText>
           </div>
           :
           <>
-          {Icon && <Icon/>}
             <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : 15 }}>
               <Font family='Inter'><span>{label}</span></Font>
             </ListItemText>
@@ -93,20 +80,16 @@ const SidebarItem = ({ label, items, depthStep, depth, subItem, activeParent, se
       </ListItem>
       {Array.isArray(items) ? (
         <List disablePadding dense>
-          {open && items.map((subItem, index) => (
+          {items.map((subItem, index) => (
             <SidebarItem
-            key={`${subItem.label}${index}`}
+              key={`${subItem.label}${index}`}
               depth={depth + 2}
               depthStep={depthStep}
-              subItem
-              activeParent={activeParent}
-              setActiveParent={setActiveParent}
-              activeChild={activeChild}
-              setActiveChild={setActiveChild}
+              subItem              
               label={subItem.label}
               items={subItem.items ? subItem.items : []}
               Link={subItem.Link ? subItem.Link : undefined}
-              Icon={subItem.Icon ? subItem.Icon : undefined}
+              name={subItem.name ? subItem.name : undefined}
             />
           ))}
         </List>
