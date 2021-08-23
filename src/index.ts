@@ -10,8 +10,7 @@ import Checkbox from "./components/Checkbox";
 import BaseCard from './components/BaseCard';
 import DataCard from "./components/DataCard";
 import Radio from './components/Radio';
-import RadioGroup from "./components/RadioGroup";
 import Chip from "./components/Chip";
 import RewardCard from "./components/RewardCard";
 
-export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, RadioGroup, Chip, RewardCard };
+export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard };
