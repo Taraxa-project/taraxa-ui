@@ -1,19 +1,8 @@
 import React from "react";
-import { Radio as MRadio, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { Radio as MRadio, RadioProps as MRadioProps, CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
 
-export interface RadioProps  {
-  color?:'default'
-  | 'primary'
-  | 'secondary';
-  disabled?: boolean;
-  name?: string;
-  checked: boolean;
-  id?: string;
-  className?: string;
-  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> | undefined;
-  value?: any;
-};
+export interface RadioProps extends MRadioProps  {};
 
 const Radio = ({
   checked,

@@ -9,13 +9,13 @@ import ChatIcon from '@material-ui/icons/Chat';
 import SendIcon from '@material-ui/icons/Send';
 import React from 'react';
 import theme from '../theme';
-import { BottomNavigationAction, CssBaseline, List, ListItem, ListItemText, ThemeProvider, Typography } from '@material-ui/core';
+import { BottomNavigationAction, BottomNavigationActionProps as MBottomNavigationActionProps, CssBaseline, ThemeProvider } from '@material-ui/core';
 import './footer.css';
 import Font from 'react-font';
 import Text from '../Text';
 
 
-export interface FooterProps  {
+export interface FooterProps extends MBottomNavigationActionProps  {
   items: { label: string; value: string; icon: "twitter" | "facebook" | "instagram" | "recent" | "favorite" | "location" | "discord" | "send"}[];
   showLabels: boolean;
   description?: string;

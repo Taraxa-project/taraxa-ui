@@ -1,19 +1,8 @@
 import React from "react";
-import { Checkbox as MCheckbox, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { Checkbox as MCheckbox, CssBaseline, ThemeProvider, CheckboxProps as MCheckboxProps } from '@material-ui/core';
 import theme from "../theme";
 
-export interface CheckboxProps  {
-  color?:'default'
-  | 'primary'
-  | 'secondary';
-  disabled?: boolean;
-  name?: string;
-  checked: boolean;
-  id?: string;
-  className?: string;
-  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> | undefined;
-  value?: any;
-};
+export interface CheckboxProps extends MCheckboxProps  {};
 
 const Checkbox = ({
   checked,

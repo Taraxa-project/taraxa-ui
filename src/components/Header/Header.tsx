@@ -1,29 +1,17 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '../Button';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, AppBarProps, AppBar } from '@material-ui/core';
 import theme from "../theme";
 import useStyles from './header-styles';
 
 
-export interface HeaderProps  {
-  color: 'default'
-  | 'inherit'
-  | 'primary'
-  | 'secondary'
-  | 'transparent';
-  position:	'absolute'
-  | 'fixed'
-  | 'relative'
-  | 'static'
-  | 'sticky';
+export interface HeaderProps extends AppBarProps  {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  elevation?: number;
   button?: JSX.Element;
 };
 

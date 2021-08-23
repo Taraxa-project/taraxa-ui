@@ -1,5 +1,5 @@
 import React from "react";
-import { Card as MCard, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
+import { Card as MCard, CardProps as MCardProps, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
 import Button from "../Button";
@@ -7,8 +7,7 @@ import useStyles from './datacard-styles';
 
 
 
-export interface DataCardProps  {
-  title: string;
+export interface DataCardProps extends MCardProps  {
   description: string;
   label?: string;
   input: JSX.Element;

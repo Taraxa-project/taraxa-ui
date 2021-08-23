@@ -1,23 +1,12 @@
 import React from "react";
 import "./button.css";
-import { Button as MButton, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { Button as MButton, CssBaseline, ThemeProvider, ButtonProps as MButtonProps } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
 
-export interface ButtonProps  {
-  color?: "inherit" | "primary" | "secondary" | "default" | undefined;
-  disabled?: boolean;
-  label?: string;
-  size?: "small" | "medium" | "large";
-  variant? : 'contained' | 'outlined' | 'text';
-  disableElevation?: boolean;
-  onClick?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
-  fullWidth?: boolean;
-  id?: string;
-  className?: string;
+export interface ButtonProps extends MButtonProps {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  label?: string;
 };
 
 const Button = ({

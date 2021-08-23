@@ -1,5 +1,5 @@
 import React from "react";
-import { Card as MCard, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
+import { Card as MCard, CardProps, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
 import Button from "../Button";
@@ -7,15 +7,11 @@ import useStyles from './rewardcard-styles';
 
 
 
-export interface RewardCardProps  {
-  title: string;
+export interface RewardCardProps extends CardProps {
   description: string;
   reward: string;
   expiration?: string;
   submissions?: number;
-  onClick: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
   onClickText: string;
   ExpirationIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   SubmissionIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;

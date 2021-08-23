@@ -1,33 +1,11 @@
 import React from "react";
-import { TextField, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
+import { TextField, StandardTextFieldProps, FilledTextFieldProps, OutlinedTextFieldProps, CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
 
 
 
-export interface InputFieldProps  {
-  label: string;
-  id?: string;
-  color?: 'primary'
-  | 'secondary';
-  defaultValue?: string;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  margin?: 'dense'
-  | 'none'
-  | 'normal';
-  multiline?: boolean;
-  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> | undefined;
-  required?: boolean;
-  placeholder?: string;
-  size?: 'medium'
-  | 'small';
-  value?: any;
-  variant: 'filled'
-  | 'outlined'
-  | 'standard';
-  className?: string;
-  type: "text" | "number";
+export interface InputFieldProps extends StandardTextFieldProps, FilledTextFieldProps, OutlinedTextFieldProps {
   min?: number;
   max?: number;
 };

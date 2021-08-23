@@ -1,27 +1,8 @@
 import React from "react";
-import { Chip, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { Chip, CssBaseline, ThemeProvider, ChipProps as MChipProps } from '@material-ui/core';
 import theme from "../theme";
 
-export interface ChipProps  {
-  clickable: boolean;
-  color?: 'default'
-  | 'primary'
-  | 'secondary';
-  avatar?: JSX.Element;
-  deleteIcon?: JSX.Element;
-  disabled?: boolean;
-  icon?: JSX.Element;
-  label: string;
-  size?: 'medium'
-  | 'small';
-  onDelete?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> | undefined;
-  variant: 'default'
-  | 'outlined';
-  onClick?: ((event: any) => void) | undefined;
-  className?: string;
-  style?: React.CSSProperties | undefined
-};
-
+export interface ChipProps extends MChipProps  {};
 
 const Pill = ({
   clickable,

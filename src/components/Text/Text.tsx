@@ -1,18 +1,12 @@
 import React from "react";
-import "./text.css";
-import { CssBaseline, ThemeProvider, Typography } from "@material-ui/core";
+import { CssBaseline, ThemeProvider, Typography, TypographyProps } from "@material-ui/core";
 import { Variant } from "@material-ui/core/styles/createTypography";
 import theme from "../theme";
 import Font from 'react-font'
 
 
-export interface TextProps  {
+export interface TextProps extends TypographyProps {
   label: string;
-  variant: Variant;
-  color: "inherit" | "initial" | "primary" | "secondary" | "textPrimary" | "textSecondary" | "error" | undefined;
-  id?: string;
-  className?: string;
-  style?: React.CSSProperties;
 };
 
 const Text = ({
