@@ -12,9 +12,7 @@ export interface DataCardProps extends MCardProps  {
   label?: string;
   input: JSX.Element;
   disabled?: boolean;
-  onClick?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onClickButton?:  React.MouseEventHandler<HTMLButtonElement> | undefined;
   onClickText?: string;
   dataOptions?: JSX.Element;
 };
@@ -24,7 +22,7 @@ export interface DataCardProps extends MCardProps  {
 const DataCard = ({
   title,
   description,
-  onClick,
+  onClickButton,
   onClickText,
   input,
   disabled,
@@ -55,9 +53,9 @@ const DataCard = ({
         </CardContent>
         {input && input}
         {dataOptions && dataOptions}
-        {onClick && onClickText && 
+        {onClickButton && onClickText && 
           <CardActions className={classes.actions}>
-            <Button disableElevation color="secondary" disabled={disabled} onClick={onClick} variant="contained" label={onClickText} size="medium"></Button>
+            <Button disableElevation color="secondary" disabled={disabled} onClick={onClickButton} variant="contained" label={onClickText} size="medium"></Button>
           </CardActions>}
       </MCard>
     </ThemeProvider>

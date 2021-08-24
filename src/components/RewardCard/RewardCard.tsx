@@ -15,6 +15,7 @@ export interface RewardCardProps extends CardProps {
   onClickText: string;
   ExpirationIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   SubmissionIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  onClickButton?:  React.MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
 
@@ -22,7 +23,7 @@ export interface RewardCardProps extends CardProps {
 const RewardCard = ({
   title,
   description,
-  onClick,
+  onClickButton,
   onClickText,
   reward,
   expiration,
@@ -66,7 +67,7 @@ const RewardCard = ({
           <div className={classes.actionCard}>
             <Typography color="primary" variant="body1" className={classes.infoData}>Reward:</Typography>
             <div className={classes.rewardContent}>{reward}</div>
-            <Button disableElevation color="secondary" onClick={onClick} variant="contained" label={onClickText} size="medium" className={classes.button}></Button>
+            <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText} size="medium" className={classes.button}></Button>
 
           </div>
         </CardContent> 

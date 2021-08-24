@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { Card as MCard, CardProps as MCardProps, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
@@ -9,9 +9,7 @@ import useStyles from './iconcard-styles';
 
 export interface IconCardProps extends MCardProps {
   description: string;
-  onClick?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onClickButton?:  React.MouseEventHandler<HTMLButtonElement> | undefined;
   onClickText?: string;
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 };
@@ -21,7 +19,7 @@ export interface IconCardProps extends MCardProps {
 const IconCard = ({
   title,
   description,
-  onClick,
+  onClickButton,
   onClickText,
   Icon
 }: IconCardProps) => {
@@ -42,9 +40,9 @@ const IconCard = ({
             </Typography>
           </Font>
         </CardContent>
-        {onClick && onClickText && 
+        {onClickButton && onClickText && 
           <CardActions className={classes.actions}>
-            <Button disableElevation color="secondary" onClick={onClick} variant="contained" label={onClickText} size="small"></Button>
+            <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText} size="small"></Button>
           </CardActions>}
       </MCard>
     </ThemeProvider>
