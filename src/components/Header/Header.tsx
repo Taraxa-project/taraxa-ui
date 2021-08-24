@@ -4,7 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import Button from '../Button';
 import { CssBaseline, AppBarProps, AppBar } from '@material-ui/core';
 import theme from "../theme";
 import useStyles from './header-styles';
@@ -12,10 +11,11 @@ import useStyles from './header-styles';
 
 export interface HeaderProps extends AppBarProps  {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  wallet?: JSX.Element;
   button?: JSX.Element;
 };
 
-export default function PrimarySearchAppBar({color, position, elevation, Icon, button}: HeaderProps) {
+export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button}: HeaderProps) {
   const classes = useStyles();
 
   return (
@@ -32,7 +32,7 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, b
             <Typography className={classes.title} variant="h6" noWrap>
               Taraxa Community
             </Typography>
-            <div className={classes.search}>
+            {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
@@ -44,10 +44,11 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, b
                 }}
                 inputProps={{ 'aria-label': 'search' }}
               />
-            </div>
+            </div> */}
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              {button}
+              {wallet}
+              <div className={classes.button}>{button}</div>
             </div>
             
           </Toolbar>

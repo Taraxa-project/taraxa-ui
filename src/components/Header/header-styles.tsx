@@ -53,6 +53,13 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up('md')]: {
         display: 'flex',
       },
+      width: '40%',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
+    button: {
+      marginLeft: '5%',
+      marginRigth: '3%',
     },
     headerIcon: {
       marginRight: '5%', 
