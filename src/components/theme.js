@@ -77,7 +77,12 @@ const theme = createTheme({
           backgroundColor: '#878CA4',
         }
       }
-    }
+    },
+    MuiFormControlLabel: {
+      label: {
+        color: 'white',
+      },
+    },
   },
 });
 

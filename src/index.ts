@@ -12,5 +12,6 @@ import DataCard from "./components/DataCard";
 import Radio from './components/Radio';
 import Chip from "./components/Chip";
 import RewardCard from "./components/RewardCard";
+import Switch from './components/Switch';
 
-export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard };
+export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard, Switch };

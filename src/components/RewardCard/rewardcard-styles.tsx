@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     width: '100%',
     minHeight: 180,
     textAlign: "center",
-    backgroundColor: '#151823',
+    backgroundColor: '#212534',
     paddingLeft: "2%",
     paddingRight: "1%",
     border: "1px solid #737B99"
@@ -59,6 +59,14 @@ const useStyles = makeStyles({
     marginRight: '5%',
     display: 'flex',
     width: '25%'
+  },
+  dot: {
+    height: '15px',
+    width: '15px',
+    backgroundColor: '#15AC5B',
+    borderRadius: '50%',
+    display: 'inline-block',
+    marginLeft: '2%',
   }
 });
 
