@@ -73,7 +73,7 @@ const SidebarItem = ({ label, items, depthStep, depth, subItem, Link, name} : Si
           :
           <>
             <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : 15 }}>
-              <Font family='Inter'><span>{label}</span></Font>
+              {label}
             </ListItemText>
           </>
         }

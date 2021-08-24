@@ -39,10 +39,28 @@ const theme = createTheme({
       ].join(','),
     },
     button: {
-      fontFamily: "Inter",
+      fontFamily: [
+        'Inter',
+        'sans-serif',
+      ].join(','),
       fontSize: 12,
     },
-    fontFamily: "Inter",
+    body1: {
+      fontFamily: [
+        'Inter',
+        'sans-serif',
+      ].join(','),
+    },
+    body2: {
+      fontFamily: [
+        'Inter',
+        'sans-serif',
+      ].join(','),
+    },
+    fontFamily: [
+      'Inter',
+      'sans-serif',
+    ].join(','),
   },
   palette: {
     primary: {

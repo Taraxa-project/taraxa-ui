@@ -39,12 +39,10 @@ const RewardCard = ({
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent className={classes.content}>
           <div className={classes.informationCard}>
-              <Font family="Poppins">
                 <Typography variant="h5" color="primary" className={classes.infoData}>
                 {title}
                 <span className={classes.dot}></span>
               </Typography>
-              </Font>
             
               <Typography variant="body2" color="primary" className={classes.infoData}>
                 {description}

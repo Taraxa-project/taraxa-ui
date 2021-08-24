@@ -22,13 +22,11 @@ const BaseCard = ({
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
           <Typography color="primary" variant="h4" component="h4" className={classes.bottomSpacing}>
-          <Font family="Poppins"><span>{title}</span></Font>
+          {title}
+          </Typography>          
+          <Typography className={classes.label} variant="h5" color="primary">
+            {description}
           </Typography>
-          <Font family='Inter'>
-            <Typography className={classes.label} variant="h5" color="primary">
-              <Font family="Inter"><span>{description}</span></Font>
-            </Typography>
-          </Font>
         </CardContent>
       </MCard>
     </ThemeProvider>

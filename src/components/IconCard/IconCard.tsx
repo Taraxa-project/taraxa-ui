@@ -32,13 +32,11 @@ const IconCard = ({
         <CardContent>
           {Icon && <div className={classes.icon}><Icon/></div>}
           <Typography color="primary" variant="h5" component="h5" className={classes.bottomSpacing}>
-          <Font family="Poppins"><span>{title}</span></Font>
+          {title}
           </Typography>
-          <Font family='Inter'>
             <Typography className={classes.label} color="primary">
-              <Font family="Inter"><span>{description}</span></Font>
+              {description}
             </Typography>
-          </Font>
         </CardContent>
         {onClickButton && onClickText && 
           <CardActions className={classes.actions}>

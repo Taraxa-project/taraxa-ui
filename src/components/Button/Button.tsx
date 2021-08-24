@@ -1,6 +1,6 @@
 import React from "react";
 import "./button.css";
-import { Button as MButton, CssBaseline, ThemeProvider, ButtonProps as MButtonProps } from '@material-ui/core';
+import { Button as MButton, CssBaseline, ThemeProvider, ButtonProps as MButtonProps, Typography } from '@material-ui/core';
 import theme from "../theme";
 import Font from "react-font";
 
@@ -37,7 +37,7 @@ const Button = ({
         className={className}
         >
         {Icon && <Icon />}
-        {label && <Font family='Inter'><span>{label}</span></Font>}
+        {label && label}
       </MButton>
     </ThemeProvider>
   );

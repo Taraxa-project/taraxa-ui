@@ -36,17 +36,15 @@ const DataCard = ({
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
-          <Font family='Inter'>
             <Typography variant="body1" className={classes.label} color="primary">
-              <Font family="Inter"><span>{description}</span></Font>
+              {description}
             </Typography>
-          </Font>
           <Typography color="primary" variant="h3" component="h3" className={classes.bottomSpacing}>
-          <Font family="Poppins"><span>{title}</span></Font>
+         {title}
           </Typography>
           {label && <Font family='Inter'>
             <Typography className={classes.label} variant="body2" color="textSecondary">
-              <Font family="Inter"><span>{label}</span></Font>
+             {label}
             </Typography>
           </Font>
           }
