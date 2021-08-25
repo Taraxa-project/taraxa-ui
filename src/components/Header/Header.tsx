@@ -2,8 +2,6 @@ import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
 import { CssBaseline, AppBarProps, AppBar } from '@material-ui/core';
 import theme from "../theme";
 import useStyles from './header-styles';
@@ -25,8 +23,8 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, w
         <AppBar color={color} position={position} elevation={elevation}>
           <Toolbar>
             {Icon && <><Icon className={classes.headerIcon} />
-                          <div style={{width: '20px'}}/>
-                          </>
+                       <div style={{width: '20px'}}/>
+                     </>
             }
             
             <Typography className={classes.title} variant="h6" noWrap>

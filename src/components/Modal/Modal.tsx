@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Card as MCard, CardActions, CardContent, CssBaseline, makeStyles, ThemeProvider, Typography } from '@material-ui/core';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
-import Font from "react-font";
-import Button from "../Button";
 import RModal from 'react-modal';
 
 

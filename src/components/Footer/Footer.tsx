@@ -10,9 +10,8 @@ import SendIcon from '@material-ui/icons/Send';
 import React from 'react';
 import theme from '../theme';
 import { BottomNavigationAction, BottomNavigationActionProps as MBottomNavigationActionProps, CssBaseline, ThemeProvider } from '@material-ui/core';
-import './footer.css';
-import Font from 'react-font';
 import Text from '../Text';
+import useStyles from './footer-styles';
 
 
 export interface FooterProps extends MBottomNavigationActionProps  {
@@ -32,25 +31,26 @@ const Footer = ({
   title,
   Icon
 }: FooterProps) => {
+  const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="footer">
-        <div className="logo">
+      <div className={classes.footer}>
+        <div className={classes.logo}>
           {Icon && <><Icon/><div style={{width: '20px'}}/> </>} <Text label={title} variant="h4" color="primary"/>
         </div>
-        {description && <div className="description">
+        {description && <div className={classes.description}>
           <Text label={description} variant="body1" color="textSecondary" style={{ textAlign: 'left'}}/>
         </div>}
-        <BottomNavigation showLabels={showLabels} className="bottomNavigation">
+        <BottomNavigation showLabels={showLabels} className={classes.bottomNavigation}>
           {items.map((item) => (
-            <BottomNavigationAction className="bottomNavigationItem" label={item.label} value={item.value} icon={GetIcon(item.icon)} />
+            <BottomNavigationAction className={classes.bottomNavigationItem} label={item.label} value={item.value} icon={GetIcon(item.icon)} />
           ))}
         </BottomNavigation>
         {links && 
-          <div className="footerList">
+          <div className={classes.footerList}>
             {links.map((link, index) => (
-              <Text label={link.label} variant="body1" color="textSecondary" style={{  cursor: 'pointer' }}/>
+              <Text label={link.label} variant="body1" color="textSecondary" className={classes.footerParagraph}/>
           ))}
           </div>
         }

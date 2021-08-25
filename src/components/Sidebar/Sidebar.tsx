@@ -3,9 +3,7 @@ import { CssBaseline, List, ThemeProvider } from '@material-ui/core'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import theme from "../theme";
-import Font from "react-font";
 import '../app.scss';
-import { useState } from "react";
 
 
 export interface SidebarProps  {

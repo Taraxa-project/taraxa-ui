@@ -1,10 +1,9 @@
-import React, { MouseEventHandler } from "react";
+import React from "react";
 import { Card as MCard, CardProps as MCardProps, CardActions, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import theme from "../theme";
-import Font from "react-font";
 import Button from "../Button";
 import useStyles from './iconcard-styles';
-
+import Font from "react-font";
 
 
 export interface IconCardProps extends MCardProps {
@@ -34,8 +33,8 @@ const IconCard = ({
           <Typography color="primary" variant="h5" component="h5" className={classes.bottomSpacing}>
           {title}
           </Typography>
-            <Typography className={classes.label} color="primary">
-              {description}
+            <Typography className={classes.label} variant="body1" color="primary">
+              <Font family="Inter"><span>{description}</span></Font>
             </Typography>
         </CardContent>
         {onClickButton && onClickText && 

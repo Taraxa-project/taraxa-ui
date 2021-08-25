@@ -39,7 +39,7 @@ const DataCard = ({
             <Typography variant="body1" className={classes.label} color="primary">
               {description}
             </Typography>
-          <Typography color="primary" variant="h3" component="h3" className={classes.bottomSpacing}>
+          <Typography color="primary" variant="h4" component="h4" className={classes.bottomSpacing}>
          {title}
           </Typography>
           {label && <Font family='Inter'>
