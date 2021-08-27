@@ -15,8 +15,7 @@ import useStyles from './footer-styles';
 
 
 export interface FooterProps extends MBottomNavigationActionProps  {
-  items: { label: string; value: string; icon: "twitter" | "facebook" | "instagram" | "recent" | "favorite" | "location" | "discord" | "send"}[];
-  showLabels: boolean;
+  items: { label: string; Icon: JSX.Element}[];
   description?: string;
   title: string;
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -25,7 +24,6 @@ export interface FooterProps extends MBottomNavigationActionProps  {
 
 const Footer = ({
   items,
-  showLabels,
   description,
   links,
   title,
@@ -37,16 +35,22 @@ const Footer = ({
       <CssBaseline />
       <div className={classes.footer}>
         <div className={classes.logo}>
-          {Icon && <><Icon/><div style={{width: '20px'}}/> </>} <Text label={title} variant="h4" color="primary"/>
+          {Icon && <div className={classes.footerSVG}><Icon /></div>} <Text className={classes.logoText} label={title} variant="h4" color="primary"/>
+          {items && <ul className={classes.footerUl}>
+            {items.map((item) => (
+            <li className={classes.footerLi}>{item.Icon}</li>
+            ))}
+            </ul>  
+          }
         </div>
         {description && <div className={classes.description}>
           <Text label={description} variant="body1" color="textSecondary" style={{ textAlign: 'left'}}/>
         </div>}
-        <BottomNavigation showLabels={showLabels} className={classes.bottomNavigation}>
+        {/* <BottomNavigation showLabels={showLabels} className={classes.bottomNavigation}>
           {items.map((item) => (
             <BottomNavigationAction className={classes.bottomNavigationItem} label={item.label} value={item.value} icon={GetIcon(item.icon)} />
           ))}
-        </BottomNavigation>
+        </BottomNavigation> */}
         {links && 
           <div className={classes.footerList}>
             {links.map((link, index) => (

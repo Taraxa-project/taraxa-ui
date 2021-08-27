@@ -13,5 +13,6 @@ import Radio from './components/Radio';
 import Chip from "./components/Chip";
 import RewardCard from "./components/RewardCard";
 import Switch from './components/Switch';
+import ProfileCard from "./components/ProfileCard";
 
-export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard, Switch };
+export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard, Switch, ProfileCard };

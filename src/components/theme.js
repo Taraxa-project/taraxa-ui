@@ -101,6 +101,9 @@ const theme = createTheme({
         color: 'white',
       },
     },
+    h4: {
+      fontFamily: 'Poppins'
+    }
   },
 });
 

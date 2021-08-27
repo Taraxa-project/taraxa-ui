@@ -16,10 +16,11 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '70.5%',
       borderTop: '1px solid #40465f',
       paddingTop: '2%',
-      marginLeft: '11.5%',
+      marginLeft: '20%',
       marginBottom: '2%',
-      display: 'inline-flex',
       alignItems: 'center',
+      display: 'grid',
+      gridTemplateColumns: '30% 30% 60%',
     },
     description: {
       width: '45%',
@@ -47,6 +48,24 @@ const useStyles = makeStyles((theme: Theme) =>
     footerParagraph: {
       marginRight: '5%',
       cursor: 'pointer',
+    },
+    footerUl: {
+      marginLeft: '130%',
+      width: '100%',
+    },
+    footerLi: {
+      display: 'inline',
+      marginLeft: '10%'
+    },
+    footerSVG: {
+      textAlign: 'left',
+      gridColumn: 1,
+      gridRow: 1,
+    },
+    logoText: {
+      width: '80%',
+      gridColumn: 1,
+      gridRow: 1,
     }
   }),
 );
