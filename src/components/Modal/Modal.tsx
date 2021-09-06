@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
 import RModal from 'react-modal';
-
+import Button from "../Button";
+import '../app.scss';
 
 export interface ModalProps  {
   title: string;
@@ -57,6 +58,9 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id }: M
     },
     overlay: {
       background: "rgba(0, 0, 0, 0.5)",
+    },
+    close: {
+
     }
   };
 
@@ -72,6 +76,7 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id }: M
         contentLabel={title}
         id={id}
       >
+        <Button label="X" onClick={onRequestClose} className="modalClose" />
         {children}
       </RModal>
     </ThemeProvider>

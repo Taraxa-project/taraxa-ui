@@ -2,10 +2,10 @@ import React from "react";
 import { Card as MCard, CardProps, CardContent, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import theme from "../theme";
 import Button from "../Button";
-import useStyles from './rewardcard-styles';
+import useStyles from './verticalrewardcard-styles';
 
 
-export interface RewardCardProps extends CardProps {
+export interface VerticalRewardCardProps extends CardProps {
   description: string;
   reward: string;
   expiration?: string;
@@ -14,12 +14,11 @@ export interface RewardCardProps extends CardProps {
   ExpirationIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   SubmissionIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   onClickButton?:  React.MouseEventHandler<HTMLButtonElement> | undefined;
-  dataList?: JSX.Element;
 };
 
 
 
-const RewardCard = ({
+const VerticalRewardCard = ({
   title,
   description,
   onClickButton,
@@ -28,9 +27,8 @@ const RewardCard = ({
   expiration,
   submissions,
   SubmissionIcon,
-  ExpirationIcon,
-  dataList
-}: RewardCardProps) => {
+  ExpirationIcon
+}: VerticalRewardCardProps) => {
   const classes = useStyles();
 
   return (
@@ -69,15 +67,10 @@ const RewardCard = ({
             <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText} size="medium" className={classes.button}></Button>
 
           </div>
-          {dataList && 
-            <div className={classes.dataListContainer}>
-              {dataList}
-            </div>
-          }
         </CardContent> 
       </MCard>
     </ThemeProvider>
   );
 }
 
-export default RewardCard;
+export default VerticalRewardCard;

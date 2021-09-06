@@ -13,12 +13,13 @@
 
 .itemOpened {
   color: #fff !important;
-  background-color: #282C3E !important;
+  background-color: #282c3e !important;
   margin: 10% 13% !important;
   padding-top: 4% !important;
   width: 85% !important;
   border-radius: 8px !important;
-  
+  height: 5% !important;
+
   .active {
     color: #fff !important;
   }
@@ -41,8 +42,6 @@
   margin: 10% 0 10% 13% !important;
 }
 
-
-
 .whiteLink {
   text-decoration: none !important;
   display: -webkit-inline-box !important;
@@ -63,17 +62,29 @@
 
 .subItemOpened {
   color: #fff !important;
-  background-color: #282C3E !important;
+  background-color: #282c3e !important;
   margin: 10% 13% !important;
   padding-top: 4% !important;
   width: 85% !important;
   border-radius: 8px !important;
-  
+  height: 5% !important;
+
   .active {
     color: #fff !important;
   }
 
   svg path {
-    stroke: white !important;
+    fill: white !important;
   }
+}
+
+.modalClose {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  height: 14px !important;
+  width: 14px !important;
+  margin-top: 2.5% !important;
+  margin-left: 75% !important;
+  display: flex !important;
+  position: absolute !important;
 }

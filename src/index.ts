@@ -14,5 +14,10 @@ import Chip from "./components/Chip";
 import RewardCard from "./components/RewardCard";
 import Switch from './components/Switch';
 import ProfileCard from "./components/ProfileCard";
+import ProfileBasicCard from "./components/ProfileBasicCard";
+import LinkedCards from "./components/LinkedCards";
+import Snackbar from './components/Snackbar';
+import VerticalRewardCard from "./components/VerticalRewardCard";
+import Table from './components/Table';
 
-export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard, Switch, ProfileCard };
+export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard, Switch, ProfileCard, ProfileBasicCard, LinkedCards, Snackbar, VerticalRewardCard, Table };

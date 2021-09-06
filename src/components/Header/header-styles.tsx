@@ -61,9 +61,30 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: '5%',
       marginRigth: '3%',
     },
-    headerIcon: {
-      marginRight: '5%', 
-      marginLeft: '1%'
+    headerIconContainer: {
+      backgroundColor: '#202534',
+      border: '1px solid #40465F',
+      borderRadius: '12px',
+      width: 48,
+      height: 48,
+      marginRight: '1%',
+      display: 'grid',
+      justifyContent: 'center',
+      alignContent: 'center'
+    },
+    profileModal: {
+      backgroundColor: '#282c3e',
+      border: '1px solid #878ca4',
+      display: 'grid',
+      width: '15%',
+      padding: '1%',
+      marginLeft: '82%',
+      borderRadius: '5px',
+      marginTop: '0.3%',
+      position: 'absolute',
+    },
+    profileButton: {
+      marginBottom: '5%'
     }
   }),
 );

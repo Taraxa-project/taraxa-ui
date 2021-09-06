@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler } from "react";
 import { TextField, CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
+import "./inputfield.scss"
 
 export interface InputFieldProps {
   label: string;

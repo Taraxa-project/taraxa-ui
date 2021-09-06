@@ -31,7 +31,7 @@ const IconCard = ({
         <CardContent>
           {Icon && <div className={classes.icon}><Icon/></div>}
           <Typography color="primary" variant="h5" component="h5" className={classes.bottomSpacing}>
-          {title}
+          <Font family="Poppins"><>{title}</></Font>
           </Typography>
             <Typography className={classes.label} variant="body1" color="primary">
               <Font family="Inter"><span>{description}</span></Font>

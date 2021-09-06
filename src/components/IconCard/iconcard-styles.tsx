@@ -6,27 +6,27 @@ const useStyles = makeStyles({
     minHeight: 180,
     textAlign: "left",
     backgroundColor: '#282C3E',
-    paddingLeft: "2%",
-    paddingRight: "1%",
+    paddingLeft: "24px",
+    paddingRight: "24px",
     border: "1px solid #40465F"
   },
   label: {
     fontSize: 12,
-    marginTop: "5%",
-    marginBottom: "5%"
+    marginTop: "10%",
+    marginBottom: "15%"
   },
   actions: {
     display: "grid",
     paddingLeft: '2%',
     paddingRight: '8%',
-    marginBottom: "5%"
+    marginBottom: "10%"
   },
   bottomSpacing: {
     marginBottom: '5%'
   },
   icon: {
-    marginBottom: '5%',
-    marginTop: '5%'
+    marginBottom: '10%',
+    marginTop: '10%'
   }
 });
 

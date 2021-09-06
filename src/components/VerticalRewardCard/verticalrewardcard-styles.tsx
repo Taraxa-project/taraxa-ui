@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    minHeight: 180,
+    minHeight: 350,
     textAlign: "center",
     backgroundColor: '#212534',
     paddingLeft: "2%",
@@ -11,27 +11,19 @@ const useStyles = makeStyles({
     border: "1px solid #737B99"
   },
   content: {
-    gridTemplateColumns: '65% 35%',
-    display: 'grid'
+    
   },
   informationCard: {
     textAlign: 'left',
-    gridColumn: 1,
   },
   infoData: {
     margin: '1% 0 6% 0',
   },
   bottomContent: {
-    display: 'flex',
-    margin: '3% 0 1% 0',
+    margin: '5% 0 3% 0',
   },
   actionCard: {
     gridColumn: 2,
-  },
-  dataListContainer: {
-    width: '100%',
-    gridColumn: '1 / span 2',
-    marginTop: '5%'
   },
   label: {
     fontSize: 12,
@@ -42,8 +34,7 @@ const useStyles = makeStyles({
     color: 'white',
     border: '1px solid #15AC5B',
     padding: '3% 5%',
-    width: '60%',
-    margin: '2% 0 2% 20%',
+    width: '93%',
   },
   actions: {
     display: "grid",
@@ -58,14 +49,11 @@ const useStyles = makeStyles({
   },
   button: {
     marginTop: '8%',
-    width: '60%',
-    borderRadius: '4px',
-    height: '52px',
+    width: '60%'
   },
   iconContent: {
-    marginRight: '5%',
+    marginBottom: '5%',
     display: 'flex',
-    width: '25%'
   },
   dot: {
     height: '15px',
@@ -73,7 +61,7 @@ const useStyles = makeStyles({
     backgroundColor: '#15AC5B',
     borderRadius: '50%',
     display: 'inline-block',
-    marginLeft: '2%',
+    marginLeft: '40%',
   }
 });
 

@@ -5,15 +5,18 @@ import Typography from '@material-ui/core/Typography';
 import { CssBaseline, AppBarProps, AppBar } from '@material-ui/core';
 import theme from "../theme";
 import useStyles from './header-styles';
+import Font from 'react-font';
 
 
 export interface HeaderProps extends AppBarProps  {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   wallet?: JSX.Element;
   button?: JSX.Element;
+  profileModal?: JSX.Element;
+  showProfileModal?: boolean;
 };
 
-export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button}: HeaderProps) {
+export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button, profileModal, showProfileModal}: HeaderProps) {
   const classes = useStyles();
 
   return (
@@ -22,13 +25,13 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, w
       <div className={classes.grow}>
         <AppBar color={color} position={position} elevation={elevation}>
           <Toolbar>
-            {Icon && <><Icon className={classes.headerIcon} />
+            {Icon && <div className={classes.headerIconContainer} ><Icon />
                        <div style={{width: '20px'}}/>
-                     </>
+                     </div>
             }
             
             <Typography className={classes.title} variant="h6" noWrap>
-              Taraxa Community
+              <Font family="Inter"><>Taraxa Community</></Font>
             </Typography>
             {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -52,6 +55,7 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, w
           </Toolbar>
         </AppBar>
       </div>
+      {profileModal && showProfileModal && <div className={classes.profileModal}>{profileModal}</div>}
     </ThemeProvider>
   );
 }
