@@ -59,6 +59,7 @@
     "node-sass": "^6.0.1",
     "react-font": "^1.2.1",
     "react-modal": "^3.14.3",
+    "react-responsive": "^9.0.0-beta.4",
     "sass": "^1.38.0",
     "sass-loader": "^10"
   }

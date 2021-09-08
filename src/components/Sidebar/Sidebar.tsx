@@ -1,10 +1,41 @@
-import React from "react";
-import { CssBaseline, List, ThemeProvider } from '@material-ui/core'
+import React, { useEffect, useState } from "react";
+import { createStyles, CssBaseline, Drawer, List, makeStyles, Theme, ThemeProvider } from '@material-ui/core'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import theme from "../theme";
 import '../app.scss';
+import { useMediaQuery } from 'react-responsive';
 
+const drawerWidth = 240;
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: 'flex',
+      height: '100%',
+    },
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1,
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+      position: 'inherit',
+      backgroundColor: '#151823 !important'
+    },
+    drawerContainer: {
+      overflow: 'auto',
+      backgroundColor: '#151823'
+    },
+    content: {
+      flexGrow: 1,
+      padding: theme.spacing(3),
+      backgroundColor: '#151823'
+    },
+  }),
+);
 
 export interface SidebarProps  {
   disablePadding?: boolean;
@@ -33,12 +64,33 @@ const Sidebar = ({
   items,
   className,
 }: SidebarProps) => {
+  const classes = useStyles();
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+  const [open, setOpen] = useState(isMobile ? false : true);
+
+  const toggleDrawer = () => (
+    event: React.KeyboardEvent | React.MouseEvent,
+  ) => {
+    if (
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
+    ) {
+      return;
+    }
+    console.log('oh yeah')
+    setOpen(false);
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="sidebar">
-        <List disablePadding={disablePadding} dense={dense} className={className ? className : ''}>
+      <Drawer className="sidebar"
+        variant={!isMobile ? 'permanent' : "temporary"}
+        classes={{
+          paper: classes.drawerPaper,
+        }} open={open} onClose={() => setOpen(false)} anchor={isMobile ? "right" : "left"} elevation={0}>
+        <List disablePadding={disablePadding} dense={dense} id="sidebarList" className={className ? className : ''}>
           {items.map((sidebarItem, index) => (
             <SidebarItem
               key={`${sidebarItem.label}${index}`}
@@ -52,7 +104,7 @@ const Sidebar = ({
             />
           ))}
         </List>
-      </div>
+      </Drawer>
     </ThemeProvider>
   );
 }

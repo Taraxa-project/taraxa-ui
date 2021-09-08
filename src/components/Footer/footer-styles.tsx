@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
       gridTemplateColumns: '30% 30% 60%',
     },
     description: {
-      width: '45%',
+      width: '75%',
       gridRow: 2,
       marginLeft: '20.5%',
       marginBottom: '4%'
@@ -49,6 +49,14 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: '5%',
       cursor: 'pointer',
     },
+    mobileIcons: {
+      width: '100%',
+      textAlign: 'left',
+      marginLeft: '5%',
+    },
+    mobileFooterUL: {
+      width: '100%',
+    },
     footerUl: {
       marginLeft: '130%',
       width: '100%',
@@ -66,6 +74,12 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '80%',
       gridColumn: 1,
       gridRow: 1,
+    },
+    logoTextMobile: {
+      width: '80%',
+      gridColumn: 1,
+      gridRow: 1,
+      marginLeft: '35%',
     }
   }),
 );

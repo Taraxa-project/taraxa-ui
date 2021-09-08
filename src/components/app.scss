@@ -1,8 +1,18 @@
 .sidebar {
-  width: 250px;
+  margin: 0 1% 0 1% !important;
   background-color: #151823 !important;
   color: #878ca4;
   font-family: 'Inter, sans-serif' !important;
+
+  .MuiDrawer-paper {
+    width: 240px !important;
+    flex-shrink: 0;
+    border: none;
+  }
+
+  #sidebarList {
+    background-color: #151823;
+  }
 }
 
 .sidebar a {
@@ -16,9 +26,10 @@
   background-color: #282c3e !important;
   margin: 10% 13% !important;
   padding-top: 4% !important;
-  width: 85% !important;
   border-radius: 8px !important;
   height: 5% !important;
+  width: 75% !important;
+  text-align: center !important;
 
   .active {
     color: #fff !important;
@@ -65,10 +76,10 @@
   background-color: #282c3e !important;
   margin: 10% 13% !important;
   padding-top: 4% !important;
-  width: 85% !important;
   border-radius: 8px !important;
   height: 5% !important;
-
+  width: 75% !important;
+  text-align: center !important;
   .active {
     color: #fff !important;
   }
@@ -76,6 +87,10 @@
   svg path {
     fill: white !important;
   }
+}
+
+.MuiListItemText-root {
+  padding-left: 5px !important;
 }
 
 .modalClose {

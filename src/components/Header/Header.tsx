@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -6,18 +6,21 @@ import { CssBaseline, AppBarProps, AppBar } from '@material-ui/core';
 import theme from "../theme";
 import useStyles from './header-styles';
 import Font from 'react-font';
+import { useMediaQuery } from 'react-responsive';
 
 
 export interface HeaderProps extends AppBarProps  {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  ColapseIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   wallet?: JSX.Element;
   button?: JSX.Element;
   profileModal?: JSX.Element;
   showProfileModal?: boolean;
 };
 
-export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button, profileModal, showProfileModal}: HeaderProps) {
+export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, ColapseIcon}: HeaderProps) {
   const classes = useStyles();
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   return (
     <ThemeProvider theme={theme}>
@@ -49,7 +52,7 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, w
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               {wallet}
-              <div className={classes.button}>{button}</div>
+              <div className={classes.button}>{isMobile && ColapseIcon ? <ColapseIcon/> : button}</div>
             </div>
             
           </Toolbar>

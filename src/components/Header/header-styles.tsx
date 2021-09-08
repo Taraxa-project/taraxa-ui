@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     grow: {
       flexGrow: 1,
+      zIndex: 1400
     },
     title: {
       display: 'none',

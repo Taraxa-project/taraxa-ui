@@ -12,6 +12,7 @@ import theme from '../theme';
 import { BottomNavigationAction, BottomNavigationActionProps as MBottomNavigationActionProps, CssBaseline, ThemeProvider } from '@material-ui/core';
 import Text from '../Text';
 import useStyles from './footer-styles';
+import { useMediaQuery } from 'react-responsive';
 
 
 export interface FooterProps extends MBottomNavigationActionProps  {
@@ -30,13 +31,14 @@ const Footer = ({
   Icon
 }: FooterProps) => {
   const classes = useStyles();
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className={classes.footer}>
         <div className={classes.logo}>
-          {Icon && <div className={classes.footerSVG}><Icon /></div>} <Text className={classes.logoText} label={title} variant="h4" color="primary"/>
-          {items && <ul className={classes.footerUl}>
+          {Icon && <div className={classes.footerSVG}><Icon /></div>} <Text className={isMobile ? classes.logoTextMobile : classes.logoText} label={title} variant="h4" color="primary"/>
+          {items && !isMobile && <ul className={classes.footerUl}>
             {items.map((item) => (
             <li className={classes.footerLi}>{item.Icon}</li>
             ))}
@@ -46,6 +48,14 @@ const Footer = ({
         {description && <div className={classes.description}>
           <Text label={description} variant="body1" color="textSecondary" style={{ textAlign: 'left'}}/>
         </div>}
+        {isMobile && items && <div className={classes.mobileIcons}>
+            <ul className={classes.mobileFooterUL}>
+              {items.map((item) => (
+              <li className={classes.footerLi}>{item.Icon}</li>
+              ))}
+            </ul>
+          </div>
+        }
         {/* <BottomNavigation showLabels={showLabels} className={classes.bottomNavigation}>
           {items.map((item) => (
             <BottomNavigationAction className={classes.bottomNavigationItem} label={item.label} value={item.value} icon={GetIcon(item.icon)} />
