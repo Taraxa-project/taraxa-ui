@@ -46,6 +46,7 @@ export interface SidebarProps  {
   items: { label?: string, name?: string; Link?: JSX.Element,  items?: {label?: string, name?: string, Link?: JSX.Element}[] }[];
   onClose?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   open?: boolean;
+  mobileActions?: JSX.Element;
 };
 
 interface SidebarItemProps  {
@@ -66,7 +67,8 @@ const Sidebar = ({
   items,
   className,
   onClose,
-  open
+  open,
+  mobileActions
 }: SidebarProps) => {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -104,6 +106,7 @@ const Sidebar = ({
               name={sidebarItem.name ? sidebarItem.name : undefined}
             />
           ))}
+          {isMobile && mobileActions && mobileActions}
         </List>
       </Drawer>
     </ThemeProvider>
