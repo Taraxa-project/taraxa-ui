@@ -44,6 +44,8 @@ export interface SidebarProps  {
   depth?: 0;
   className?: string;
   items: { label?: string, name?: string; Link?: JSX.Element,  items?: {label?: string, name?: string, Link?: JSX.Element}[] }[];
+  onClose?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  open?: boolean;
 };
 
 interface SidebarItemProps  {
@@ -63,10 +65,11 @@ const Sidebar = ({
   depth,
   items,
   className,
+  onClose,
+  open
 }: SidebarProps) => {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-  const [open, setOpen] = useState(isMobile ? false : true);
 
   const toggleDrawer = () => (
     event: React.KeyboardEvent | React.MouseEvent,
@@ -78,8 +81,6 @@ const Sidebar = ({
     ) {
       return;
     }
-    console.log('oh yeah')
-    setOpen(false);
   };
 
   return (
@@ -89,7 +90,7 @@ const Sidebar = ({
         variant={!isMobile ? 'permanent' : "temporary"}
         classes={{
           paper: classes.drawerPaper,
-        }} open={open} onClose={() => setOpen(false)} anchor={isMobile ? "right" : "left"} elevation={0}>
+        }} onClose={onClose} open={open} anchor={isMobile ? "right" : "left"} elevation={0}>
         <List disablePadding={disablePadding} dense={dense} id="sidebarList" className={className ? className : ''}>
           {items.map((sidebarItem, index) => (
             <SidebarItem
@@ -111,7 +112,6 @@ const Sidebar = ({
 
 const SidebarItem = ({ label, items, depthStep, depth, subItem, Link, name} : SidebarItemProps) => {
   const pathname = window.location.pathname.length > 1 ? window.location.pathname.substring(1) : window.location.pathname;
-  if(name === pathname) console.log(pathname)
   return (
     <>
       <ListItem className={name === pathname && subItem ? 'subItemOpened' : name === pathname && !subItem ? 'itemOpened' : name === 'dashboard' && pathname === '/' && !subItem ? 'itemOpened' : subItem ? 'subItem' : !subItem && items.length < 1 ? 'soloItem' : 'item'} button dense>

@@ -8,7 +8,17 @@ const useStyles = makeStyles({
     backgroundColor: '#212534',
     paddingLeft: "2%",
     paddingRight: "1%",
-    border: "1px solid #737B99"
+    border: "1px solid #737B99",
+    marginBottom: '5%',
+  },
+  mobileRoot: {
+    width: '95%',
+    textAlign: "center",
+    backgroundColor: '#212534',
+    paddingLeft: "2%",
+    paddingRight: "1%",
+    border: "1px solid #737B99",
+    marginBottom: '5%',
   },
   content: {
     
@@ -62,7 +72,21 @@ const useStyles = makeStyles({
     borderRadius: '50%',
     display: 'inline-block',
     marginLeft: '40%',
-  }
+  },
+  mobileDot: {
+    height: '15px',
+    width: '15px',
+    backgroundColor: '#15AC5B',
+    borderRadius: '50%',
+    display: 'inline-block',
+    float: 'right',
+    marginRight: '10%'
+  },
+  dataListContainer: {
+    width: '85%',
+    gridColumn: '1 / span 2',
+    marginTop: '5%'
+  },
 });
 
 export default useStyles;

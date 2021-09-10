@@ -11,14 +11,14 @@ import { useMediaQuery } from 'react-responsive';
 
 export interface HeaderProps extends AppBarProps  {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  ColapseIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  hamburger?: JSX.Element;
   wallet?: JSX.Element;
   button?: JSX.Element;
   profileModal?: JSX.Element;
   showProfileModal?: boolean;
 };
 
-export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, ColapseIcon}: HeaderProps) {
+export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, hamburger}: HeaderProps) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
@@ -52,7 +52,7 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, w
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               {wallet}
-              <div className={classes.button}>{isMobile && ColapseIcon ? <ColapseIcon/> : button}</div>
+              <div className={classes.button}>{hamburger && isMobile ? hamburger : button}</div>
             </div>
             
           </Toolbar>

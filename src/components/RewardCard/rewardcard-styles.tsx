@@ -8,7 +8,8 @@ const useStyles = makeStyles({
     backgroundColor: '#212534',
     paddingLeft: "2%",
     paddingRight: "1%",
-    border: "1px solid #737B99"
+    border: "1px solid #737B99",
+    marginBottom: '5%',
   },
   content: {
     gridTemplateColumns: '65% 35%',

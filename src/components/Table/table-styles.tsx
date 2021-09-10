@@ -9,6 +9,11 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
       marginBottom: theme.spacing(2),
     },
+    mobilePaper: {
+      width: '100%',
+      marginBottom: theme.spacing(2),
+      
+    },
     table: {
       minWidth: 750,
       color: '#FFFFFF',
@@ -31,9 +36,21 @@ const useStyles = makeStyles((theme: Theme) =>
       color: '#FFFFFF',
       border: 'none'
     },
+    mobileTableCell: {
+      color: '#FFFFFF',
+      border: 'none',
+      paddingLeft: '1%',
+      paddingRight: '1%'
+    },
     dateTableCell: {
       color: '#6A7085',
       border: 'none'
+    },
+    mobileDateTableCell: {
+      color: '#6A7085',
+      border: 'none',
+      paddingLeft: '1%',
+      paddingRight: '1%',
     },
     tablePagination: {
       color: 'white'

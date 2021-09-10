@@ -8,6 +8,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import moment from 'moment';
+import { useMediaQuery } from 'react-responsive';
 
 export interface TableProps {
   columns: { path: string, name: string}[];
@@ -18,6 +19,7 @@ export default function Table({columns, rows}: TableProps) {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -32,7 +34,7 @@ export default function Table({columns, rows}: TableProps) {
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
   return (
       <div className={classes.root}>
-        <Paper className={classes.paper} elevation={0}>
+        <Paper className={isMobile ? classes.mobilePaper : classes.paper} elevation={0}>
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
@@ -60,7 +62,25 @@ export default function Table({columns, rows}: TableProps) {
                 { rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row, index) => (
                     row.data.map((rowData: any) => (
+                      isMobile ?
                         <TableRow
+                        // onClick={(event) => handleClick(event, row.username)}
+                        tabIndex={-1}
+                        key={index}
+                        >
+                        {row.Icon && <TableCell className={classes.mobileTableCell} align="left">{<row.Icon/>}</TableCell>}
+                        {columns.map(({ path }) => (
+                          (rowData[path] instanceof Date) ? 
+                          <TableCell  className={classes.mobileDateTableCell}>
+                            {moment(rowData[path]).fromNow()}
+                          </TableCell> : 
+                          <TableCell className={classes.mobileTableCell} align="right">
+                            {rowData[path]}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                      :
+                      <TableRow
                         // onClick={(event) => handleClick(event, row.username)}
                         tabIndex={-1}
                         key={index}

@@ -3,6 +3,7 @@ import { Card as MCard, CardProps, CardContent, CssBaseline, ThemeProvider, Typo
 import theme from "../theme";
 import Button from "../Button";
 import useStyles from './verticalrewardcard-styles';
+import { useMediaQuery } from 'react-responsive';
 
 
 export interface VerticalRewardCardProps extends CardProps {
@@ -14,6 +15,7 @@ export interface VerticalRewardCardProps extends CardProps {
   ExpirationIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   SubmissionIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   onClickButton?:  React.MouseEventHandler<HTMLButtonElement> | undefined;
+  dataList?: JSX.Element;
 };
 
 
@@ -27,19 +29,21 @@ const VerticalRewardCard = ({
   expiration,
   submissions,
   SubmissionIcon,
-  ExpirationIcon
+  ExpirationIcon,
+  dataList
 }: VerticalRewardCardProps) => {
   const classes = useStyles();
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <MCard className={classes.root} elevation={0} variant="outlined">
+      <MCard className={isMobile ? classes.mobileRoot : classes.root} elevation={0} variant="outlined">
         <CardContent className={classes.content}>
           <div className={classes.informationCard}>
                 <Typography variant="h5" color="primary" className={classes.infoData}>
                 {title}
-                <span className={classes.dot}></span>
+                <span className={isMobile ? classes.mobileDot : classes.dot}></span>
               </Typography>
             
               <Typography variant="body2" color="primary" className={classes.infoData}>
@@ -67,6 +71,11 @@ const VerticalRewardCard = ({
             <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText} size="medium" className={classes.button}></Button>
 
           </div>
+          {dataList && 
+            <div className={classes.dataListContainer}>
+              {dataList}
+            </div>
+          }
         </CardContent> 
       </MCard>
     </ThemeProvider>

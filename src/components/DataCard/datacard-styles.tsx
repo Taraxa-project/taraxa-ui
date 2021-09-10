@@ -8,7 +8,8 @@ const useStyles = makeStyles({
     backgroundColor: '#151823',
     paddingLeft: "2%",
     paddingRight: "1%",
-    border: "1px solid #15AC5B"
+    border: "1px solid #15AC5B",
+    marginBottom: '5% !important',
   },
   label: {
     fontSize: 12,

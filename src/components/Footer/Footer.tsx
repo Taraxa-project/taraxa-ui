@@ -36,8 +36,8 @@ const Footer = ({
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className={classes.footer}>
-        <div className={classes.logo}>
-          {Icon && <div className={classes.footerSVG}><Icon /></div>} <Text className={isMobile ? classes.logoTextMobile : classes.logoText} label={title} variant="h4" color="primary"/>
+        <div className={isMobile ? classes.logoMobile : classes.logo}>
+          {Icon && <div className={isMobile ? classes.footerSVGMobile : classes.footerSVG}><Icon /></div>} <Text className={isMobile ? classes.logoTextMobile : classes.logoText} label={title} variant="h4" color="primary"/>
           {items && !isMobile && <ul className={classes.footerUl}>
             {items.map((item) => (
             <li className={classes.footerLi}>{item.Icon}</li>
@@ -45,7 +45,7 @@ const Footer = ({
             </ul>  
           }
         </div>
-        {description && <div className={classes.description}>
+        {description && <div className={isMobile ? classes.descriptionMobile : classes.description}>
           <Text label={description} variant="body1" color="textSecondary" style={{ textAlign: 'left'}}/>
         </div>}
         {isMobile && items && <div className={classes.mobileIcons}>
@@ -62,7 +62,7 @@ const Footer = ({
           ))}
         </BottomNavigation> */}
         {links && 
-          <div className={classes.footerList}>
+          <div className={isMobile ? classes.footerListMobile : classes.footerList}>
             {links.map((link, index) => (
               <Text label={link.label} variant="body1" color="textSecondary" className={classes.footerParagraph}/>
           ))}
