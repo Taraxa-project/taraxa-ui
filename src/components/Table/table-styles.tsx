@@ -1,18 +1,18 @@
-import { createStyles, lighten, makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
+const useStyles = makeStyles({
     root: {
       width: '100%',
     },
     paper: {
       width: '100%',
-      marginBottom: theme.spacing(2),
+      marginBottom: '5%',
+      backgroundColor: '#151823 !important', 
     },
     mobilePaper: {
       width: '100%',
-      marginBottom: theme.spacing(2),
-      
+      marginBottom: '5%',    
+      backgroundColor: '#151823 !important', 
     },
     table: {
       minWidth: 750,
@@ -67,7 +67,6 @@ const useStyles = makeStyles((theme: Theme) =>
     tablePaginationActions: {
         color: 'white',
       },
-  }),
-);
+});
 
 export default useStyles;

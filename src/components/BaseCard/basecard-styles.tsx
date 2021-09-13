@@ -4,7 +4,7 @@ const useStyles = makeStyles({
   root: {
     width: 280,
     textAlign: "left",
-    backgroundColor: '#181B27',
+    backgroundColor: '#181B27 !important',
     paddingLeft: "2%",
     paddingRight: "1%",
     border: "1px solid #40465F",

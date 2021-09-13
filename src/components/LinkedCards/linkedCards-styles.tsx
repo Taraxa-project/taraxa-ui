@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     paddingLeft: "2%",
     paddingRight: "1%",
     paddingBottom: '2%',
+    marginBottom: '5%',
     border: "1px solid #40465F",
     display: 'grid !important',
     gridTemplateColumns: '33% 33% 33%'

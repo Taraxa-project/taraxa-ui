@@ -20,14 +20,15 @@ const IconCard = ({
   description,
   onClickButton,
   onClickText,
-  Icon
+  Icon,
+  id
 }: IconCardProps) => {
   const classes = useStyles();
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <MCard className={classes.root} elevation={0} variant="outlined">
+      <MCard className={classes.root} id={id} elevation={0} variant="outlined">
         <CardContent>
           {Icon && <div className={classes.icon}><Icon/></div>}
           <Typography color="primary" variant="h5" component="h5" className={classes.bottomSpacing}>

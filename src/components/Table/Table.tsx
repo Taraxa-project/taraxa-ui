@@ -9,6 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import moment from 'moment';
 import { useMediaQuery } from 'react-responsive';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import theme from '../theme';
 
 export interface TableProps {
   columns: { path: string, name: string}[];
@@ -33,6 +35,8 @@ export default function Table({columns, rows}: TableProps) {
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
   return (
+    <ThemeProvider theme={theme}>
+    <CssBaseline />
       <div className={classes.root}>
         <Paper className={isMobile ? classes.mobilePaper : classes.paper} elevation={0}>
           <TablePagination
@@ -74,7 +78,7 @@ export default function Table({columns, rows}: TableProps) {
                           <TableCell  className={classes.mobileDateTableCell}>
                             {moment(rowData[path]).fromNow()}
                           </TableCell> : 
-                          <TableCell className={classes.mobileTableCell} align="right">
+                          <TableCell className={classes.mobileTableCell} align={!row.Icon ? 'center' : 'right'}>
                             {rowData[path]}
                           </TableCell>
                         ))}
@@ -88,10 +92,10 @@ export default function Table({columns, rows}: TableProps) {
                         {row.Icon && <TableCell className={classes.tableCell} align="left">{<row.Icon/>}</TableCell>}
                         {columns.map(({ path }) => (
                           (rowData[path] instanceof Date) ? 
-                          <TableCell className={classes.dateTableCell} align="right">
+                          <TableCell className={classes.dateTableCell} align={!row.Icon ? 'center' : 'right'}>
                             {moment(rowData[path]).fromNow()}
                           </TableCell> : 
-                          <TableCell className={classes.tableCell} align="right">
+                          <TableCell className={classes.tableCell} align={!row.Icon ? 'center' : 'right'}>
                             {rowData[path]}
                           </TableCell>
                         ))}
@@ -108,5 +112,6 @@ export default function Table({columns, rows}: TableProps) {
           </TableContainer>
         </Paper>
       </div>
+    </ThemeProvider>
   );
 }
