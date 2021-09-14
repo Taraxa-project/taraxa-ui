@@ -1,5 +1,5 @@
 {
-  "name": "taraxa-ui",
+  "name": "@taraxa_project/taraxa-ui",
   "version": "0.0.1",
   "description": "Taraxa UI Library",
   "main": "lib/index.js",
