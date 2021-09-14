@@ -12,6 +12,7 @@ export interface ProfileBasicCardProps extends MCardProps  {
   title: string;
   value?: string;
   description: string;
+  buttonOptions?: JSX.Element;
 };
 
 
@@ -21,6 +22,7 @@ const ProfileBasicCard = ({
   title,
   value,
   description,
+  buttonOptions
 }: ProfileBasicCardProps) => {
   const classes = useStyles();
 
@@ -45,6 +47,7 @@ const ProfileBasicCard = ({
               <Typography variant="body1" className={classes.description} color="textSecondary">
               {description}
             </Typography>     
+            {buttonOptions && buttonOptions}
         </CardContent>
         </MCard>
     </ThemeProvider>

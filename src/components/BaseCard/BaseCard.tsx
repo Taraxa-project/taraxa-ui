@@ -8,11 +8,13 @@ import useStyles from './basecard-styles';
 export interface BaseCardProps  {
   title: string;
   description: string;
+  tooltip?: JSX.Element;
 };
 
 const BaseCard = ({
   title,
   description,
+  tooltip
 }: BaseCardProps) => {
   const classes = useStyles();
 
@@ -21,9 +23,12 @@ const BaseCard = ({
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
-          <Typography color="primary" variant="h4" component="h4" className={classes.bottomSpacing}>
-          {title}
-          </Typography>          
+          <div className={classes.iconContainer}>
+            <Typography color="primary" variant="h4" component="h4" className={classes.bottomSpacing}>
+            {title}
+            </Typography> 
+            {tooltip && <div className={classes.icon}>{tooltip}</div>}  
+          </div>       
           <Typography className={classes.label} variant="body1" color="primary">
             {description}
           </Typography>

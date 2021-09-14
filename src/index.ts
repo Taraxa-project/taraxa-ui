@@ -20,5 +20,6 @@ import Snackbar from './components/Snackbar';
 import VerticalRewardCard from "./components/VerticalRewardCard";
 import Table from './components/Table';
 import ToggleButton from "./components/ToggleButton";
+import Tooltip from "./components/Tooltip";
 
-export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard, Switch, ProfileCard, ProfileBasicCard, LinkedCards, Snackbar, VerticalRewardCard, Table, ToggleButton };
+export { Button, Text, IconCard, Sidebar, Footer, Header, Modal, InputField, Checkbox, BaseCard, DataCard, Radio, Chip, RewardCard, Switch, ProfileCard, ProfileBasicCard, LinkedCards, Snackbar, VerticalRewardCard, Table, ToggleButton, Tooltip };

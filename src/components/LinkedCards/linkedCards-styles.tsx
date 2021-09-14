@@ -77,7 +77,12 @@ const useStyles = makeStyles({
     marginTop: '5%',
     gridColumn: 1,
     gridRow: 3
-  }
+  },
+  tooltipIcon: {
+    float: 'right',
+    marginTop: '2%',
+    marginRight: '10%'
+  },
 });
 
 export default useStyles;

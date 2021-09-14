@@ -10,6 +10,13 @@ const useStyles = makeStyles({
     border: "1px solid #40465F",
     marginBottom: '5% !important',
   },
+  iconContainer: {
+    display: 'flex',
+    alignItems: 'flex-start',
+  },
+  icon: {
+    marginLeft: '70%'
+  },
   label: {
     fontSize: 12,
     marginTop: "12%",

@@ -15,6 +15,7 @@ export interface DataCardProps extends MCardProps  {
   onClickButton?:  React.MouseEventHandler<HTMLButtonElement> | undefined;
   onClickText?: string;
   dataOptions?: JSX.Element;
+  tooltip?: JSX.Element;
 };
 
 
@@ -28,6 +29,7 @@ const DataCard = ({
   disabled,
   label,
   dataOptions,
+  tooltip,
 }: DataCardProps) => {
   const classes = useStyles();
 
@@ -36,9 +38,12 @@ const DataCard = ({
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
+          
+            {tooltip && <div className={classes.tooltipIcon}>{tooltip}</div>}  
             <Typography variant="body1" className={classes.label} color="primary">
               {description}
-            </Typography>
+            </Typography> 
+                    
           <Typography color="primary" variant="h4" component="h4" className={classes.bottomSpacing}>
          {title}
           </Typography>

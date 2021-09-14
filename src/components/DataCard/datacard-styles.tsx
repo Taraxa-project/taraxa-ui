@@ -11,6 +11,15 @@ const useStyles = makeStyles({
     border: "1px solid #15AC5B",
     marginBottom: '5% !important',
   },
+  iconContainer: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
+  tooltipIcon: {
+    float: 'right',
+    marginTop: '5%',
+  },
   label: {
     fontSize: 12,
     marginTop: "5%",

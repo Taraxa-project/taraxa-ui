@@ -16,6 +16,14 @@ const useStyles = makeStyles({
     marginTop: "10%",
     marginBottom: "15%"
   },
+  tooltipIcon: {
+    float: 'right',
+    marginTop: '12%',
+  },
+  noIconTooltipIcon: {
+    float: 'right',
+    marginTop: '3%',
+  },
   actions: {
     display: "grid",
     paddingLeft: '2%',
