@@ -13,12 +13,13 @@ const Text = ({
   color,
   id,
   className,
-  style
+  style,
+  onClick
 }: TextProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-        <Typography variant={variant} color={color} id={id} className={className} style={style}>
+        <Typography onClick={onClick} variant={variant} color={color} id={id} className={className} style={style}>
           {label}
         </Typography>
     </ThemeProvider>

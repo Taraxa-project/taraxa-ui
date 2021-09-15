@@ -45,7 +45,7 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id }: M
   
   const customStyles = {
     content: {
-      top: '55%',
+      top: '50%',
       left: '50%',
       right: 'auto',
       bottom: 'auto',
@@ -54,10 +54,11 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id }: M
       backgroundColor: "#282C3E",
       overflow: 'auto',
       outline: 'none',
-      maxHeight: `${height - 50}px`,
+      maxHeight: `${height - 100}px`,
     },
     overlay: {
       background: "rgba(0, 0, 0, 0.5)",
+      zIndex: 2000,
     },
     close: {
 
