@@ -16,6 +16,36 @@ const useStyles = makeStyles({
   },
   mobileRoot: {
     width: '110%',
+    ['@media (max-width: 320px)']: { // eslint-disable-line no-useless-computed-key
+      width: '120%'
+    },
+    ['@media only screen and (min-width: 321px) and (max-width: 400px)']: { // eslint-disable-line no-useless-computed-key
+      width: '113%'
+    },
+    minHeight: 900,
+    textAlign: "left",
+    backgroundColor: '#151823',
+    paddingLeft: "2%",
+    paddingRight: "1%",
+    paddingBottom: '2%',
+    border: "1px solid #40465F",
+    display: 'grid !important',
+    gridTemplateRows: '33% 33% 33%'
+  },
+  mobileRootSmall: {
+    width: '120%',
+    minHeight: 900,
+    textAlign: "left",
+    backgroundColor: '#151823',
+    paddingLeft: "2%",
+    paddingRight: "1%",
+    paddingBottom: '2%',
+    border: "1px solid #40465F",
+    display: 'grid !important',
+    gridTemplateRows: '33% 33% 33%'
+  },
+  mobileRootMedium: {
+    width: '120%',
     minHeight: 900,
     textAlign: "left",
     backgroundColor: '#151823',

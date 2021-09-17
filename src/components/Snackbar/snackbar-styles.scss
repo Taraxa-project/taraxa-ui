@@ -4,11 +4,18 @@
 
 .MuiSnackbar-root {
   width: 40% !important;
+  @media only screen and (max-width: 600px) {
+    width: 23% !important;
+  }
   .MuiPaper-root {
     background-color: #202534 !important;
     color: white !important;
     display: block !important;
     margin-left: 45% !important;
+
+    @media only screen and (max-width: 600px) {
+      margin-left: -58% !important;
+    }
   }
   .MuiButtonBase-root {
     position: absolute !important;
