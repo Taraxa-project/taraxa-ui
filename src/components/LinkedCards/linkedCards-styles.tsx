@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     gridTemplateColumns: '33% 33% 33%'
   },
   mobileRoot: {
-    width: '88%',
+    width: '110%',
     minHeight: 900,
     textAlign: "left",
     backgroundColor: '#151823',

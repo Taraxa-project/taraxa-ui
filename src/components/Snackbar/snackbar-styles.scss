@@ -1,6 +1,28 @@
-.MuiPaper-root {
-  background-color: #202534 !important;
-  color: white !important;
+.MuiSnackbar-anchorOriginTopCenter {
+  left: 45% !important;
+}
+
+.MuiSnackbar-root {
+  width: 40% !important;
+  .MuiPaper-root {
+    background-color: #202534 !important;
+    color: white !important;
+    display: block !important;
+    margin-left: 45% !important;
+  }
+  .MuiButtonBase-root {
+    position: absolute !important;
+    right: 12% !important;
+    top: 10% !important;
+  }
+  .MuiButtonBase-root {
+    margin-left: 65% !important;
+    margin-bottom: 5% !important;
+  }
+}
+
+.MuiAlert-message {
+  margin-bottom: 5% !important;
 }
 
 .MuiAlert-standardError {

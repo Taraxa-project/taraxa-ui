@@ -71,7 +71,7 @@
 
 .subItem {
   width: 85% !important;
-  margin-left: 10% !important;
+  margin: 10% 0 10% 10% !important;
 }
 
 .subItemOpened {
@@ -80,7 +80,7 @@
   border-radius: 8px !important;
   height: 48px !important;
   width: 211px !important;
-  margin-left: 10% !important;
+  margin: 5% 0 5% 10% !important;
   text-align: center !important;
   box-sizing: inherit;
   .active {

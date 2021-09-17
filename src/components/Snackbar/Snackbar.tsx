@@ -6,20 +6,21 @@ import './snackbar-styles.scss';
 export interface SnackbarProps extends MSnackbarProps  {
   severity: 'success' | 'warning' | 'error' | 'info',
   message: string;
+  onSnackbarClose: ((event: React.SyntheticEvent<Element, Event>) => void) | undefined;
 };
 
 const Snackbar = ({
   severity,
   open,
   autoHideDuration,
-  onClose,
   message,
+  onSnackbarClose
 }: SnackbarProps) => {
 
   return (
     
-      <MSnackbar open={open} autoHideDuration={autoHideDuration} onClose={onClose}>
-        <Alert severity={severity}>
+      <MSnackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={open} autoHideDuration={autoHideDuration ? autoHideDuration : 2000} onClose={onSnackbarClose}>
+        <Alert severity={severity} onClose={onSnackbarClose}>
           {message}
         </Alert>
       </MSnackbar>

@@ -2,7 +2,8 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: 280,
+    width: 320,
+    maxHeight: 160,
     textAlign: "left",
     backgroundColor: '#181B27 !important',
     paddingLeft: "2%",
@@ -15,7 +16,8 @@ const useStyles = makeStyles({
     alignItems: 'flex-start',
   },
   icon: {
-    marginLeft: '70%'
+    marginLeft: 'auto',
+    marginRight: 0,
   },
   label: {
     fontSize: 12,
