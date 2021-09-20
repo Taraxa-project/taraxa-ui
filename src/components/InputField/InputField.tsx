@@ -1,9 +1,9 @@
 import React, { ChangeEventHandler } from "react";
-import { TextField, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { TextField, TextFieldProps, CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
 import "./inputfield.scss"
 
-export interface InputFieldProps {
+export type InputFieldProps = {
   label: string;
   id?: string;
   color?: 'primary' | 'secondary';
@@ -22,21 +22,18 @@ export interface InputFieldProps {
   type?: string;
   min?: number;
   max?: number;
-};
+} & TextFieldProps;
 
-
-
-
-const InputField = ({ label, id, color, defaultValue, disabled, fullWidth, margin, multiline, onChange, required, placeholder, size, value, variant, className, type, max, min }: InputFieldProps) => {
+const InputField = ({ max, min, ...props }: InputFieldProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <TextField label={label} id={id} variant={variant} color={color} defaultValue={defaultValue} disabled={disabled} fullWidth={fullWidth} margin={margin} multiline={multiline} required={required} placeholder={placeholder} size={size} value={value} onChange={onChange} className={className} type={type} 
-      InputProps={max && min ? {
-        inputProps: { 
-            max: max, min: min 
-        }
-      } : undefined} />
+      <TextField
+        InputProps={max && min ? {
+          inputProps: {
+            max: max, min: min
+          }
+        } : undefined} {...props} />
     </ThemeProvider>
   );
 }
