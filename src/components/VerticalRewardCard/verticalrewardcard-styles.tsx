@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    maxWidth: 315,
     minHeight: 350,
     textAlign: "center",
     backgroundColor: '#212534',
@@ -21,10 +22,11 @@ const useStyles = makeStyles({
     marginBottom: '5%',
   },
   content: {
-    
+    display: 'grid',
+    height: '100%',
   },
   informationCard: {
-    textAlign: 'left',
+    textAlign: 'center',
   },
   infoData: {
     margin: '1% 0 6% 0',
@@ -33,7 +35,7 @@ const useStyles = makeStyles({
     margin: '5% 0 3% 0',
   },
   actionCard: {
-    gridColumn: 2,
+    alignSelf: 'end'
   },
   label: {
     fontSize: 12,

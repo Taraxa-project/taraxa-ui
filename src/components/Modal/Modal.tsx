@@ -14,6 +14,7 @@ export interface ModalProps  {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
   id?: string;
+  closeIcon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 };
 
 function getWindowDimensions() {
@@ -40,7 +41,7 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-const Modal = ({ children, show, title, parentElementID, onRequestClose, id }: ModalProps) => {
+const Modal = ({ children, show, title, parentElementID, onRequestClose, id, closeIcon }: ModalProps) => {
   const { height, width } = useWindowDimensions();
   
   const customStyles = {
@@ -59,9 +60,6 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id }: M
     overlay: {
       background: "rgba(0, 0, 0, 0.5)",
       zIndex: 2000,
-    },
-    close: {
-
     }
   };
 
@@ -77,7 +75,7 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id }: M
         contentLabel={title}
         id={id}
       >
-        <Button label="X" onClick={onRequestClose} className="modalClose" />
+        <Button Icon={closeIcon} onClick={onRequestClose} className="modalClose" />
         {children}
       </RModal>
     </ThemeProvider>
