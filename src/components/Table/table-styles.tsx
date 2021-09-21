@@ -34,17 +34,20 @@ const useStyles = makeStyles({
     },
     tableCell: {
       color: '#FFFFFF',
-      border: 'none'
+      border: 'none',
+      height: 'auto',
     },
     mobileTableCell: {
       color: '#FFFFFF',
       border: 'none',
       paddingLeft: '1%',
-      paddingRight: '1%'
+      paddingRight: '1%',
+      height: 'auto',
     },
     dateTableCell: {
       color: '#6A7085',
-      border: 'none'
+      border: 'none',
+      height: 'auto',
     },
     mobileDateTableCell: {
       color: '#6A7085',
@@ -53,7 +56,8 @@ const useStyles = makeStyles({
       paddingRight: '1%',
     },
     tablePagination: {
-      color: 'white'
+      color: 'white',
+      backgroundColor: '#282C3E',
     },
     tablePaginationCaption: {
         color: 'white'
@@ -62,10 +66,12 @@ const useStyles = makeStyles({
         color: 'white'
       },
     tablePaginationSelect: {
-        color: 'white'
+        color: 'white',
+        backgroundColor: '#282C3E',
       },
     tablePaginationActions: {
         color: 'white',
+        backgroundColor: '#282C3E',
       },
 });
 

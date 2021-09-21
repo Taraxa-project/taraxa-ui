@@ -47,12 +47,16 @@ export default function Table({columns, rows}: TableProps) {
             page={page}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
+            SelectProps={{
+              MenuProps: { classes: { paper: classes.tablePaginationSelect } }
+            }}
             classes={{
               root: classes.tablePagination,
               caption: classes.tablePaginationCaption,
               selectIcon: classes.tablePaginationSelectIcon,
               select: classes.tablePaginationSelect,
               actions: classes.tablePaginationActions,
+              menuItem: classes.tablePaginationSelect,
             }}
           />
           <TableContainer>
@@ -102,11 +106,7 @@ export default function Table({columns, rows}: TableProps) {
                       </TableRow>
                     ))
                   ))}
-                {emptyRows > 0 && (
-                  <TableRow style={{ height: (53) * emptyRows }}>
-                    <TableCell className={classes.tableCell} colSpan={6} />
-                  </TableRow>
-                )}
+                
               </TableBody>
             </MTable>
           </TableContainer>

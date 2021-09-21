@@ -74,6 +74,8 @@ const useStyles = makeStyles({
     borderRadius: '50%',
     display: 'inline-block',
     marginLeft: '40%',
+    marginTop: '10%',
+    float: 'right'
   },
   mobileDot: {
     height: '15px',
@@ -82,7 +84,7 @@ const useStyles = makeStyles({
     borderRadius: '50%',
     display: 'inline-block',
     float: 'right',
-    marginRight: '10%'
+    marginRight: '10%',
   },
   dataListContainer: {
     width: '85%',

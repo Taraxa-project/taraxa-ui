@@ -11,6 +11,7 @@ export interface VerticalRewardCardProps extends CardProps {
   reward: string;
   expiration?: string;
   submissions?: number;
+  active?: boolean;
   onClickText: string;
   ExpirationIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   SubmissionIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -30,7 +31,8 @@ const VerticalRewardCard = ({
   submissions,
   SubmissionIcon,
   ExpirationIcon,
-  dataList
+  dataList,
+  active,
 }: VerticalRewardCardProps) => {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -41,10 +43,14 @@ const VerticalRewardCard = ({
       <MCard className={isMobile ? classes.mobileRoot : classes.root} elevation={0} variant="outlined">
         <CardContent className={classes.content}>
           <div className={classes.informationCard}>
-            <Typography variant="h5" color="primary" className={classes.infoData}>
-              {title}
-              <span className={isMobile ? classes.mobileDot : classes.dot}></span>
-            </Typography>
+            <div style={{display: 'grid', gridTemplateColumns: '95% 5%'}}>
+              <div style={{gridColumn: 1}}>
+              <Typography variant="h5" color="primary" className={classes.infoData}>
+                {title}
+              </Typography>
+              </div>
+              {active && <span style={{gridColumn: 2}} className={isMobile ? classes.mobileDot : classes.dot}></span>}
+            </div>
 
             <Typography variant="body2" color="primary" className={classes.infoData}>
               {description}
