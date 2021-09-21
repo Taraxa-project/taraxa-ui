@@ -56,6 +56,9 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id, clo
       overflow: 'auto',
       outline: 'none',
       maxHeight: `${height - 100}px`,
+      border: '1px solid #4F5368',
+      boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.25)',
+      borderRadius: '6px',
     },
     overlay: {
       background: "rgba(0, 0, 0, 0.5)",

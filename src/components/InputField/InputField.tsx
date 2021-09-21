@@ -22,6 +22,8 @@ export type InputFieldProps = {
   type?: string;
   min?: number;
   max?: number;
+  error?: boolean;
+  helperText?: string;
 } & TextFieldProps;
 
 const InputField = ({ max, min, ...props }: InputFieldProps) => {
