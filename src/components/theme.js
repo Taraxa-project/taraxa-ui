@@ -43,7 +43,7 @@ const theme = createTheme({
         'Inter',
         'sans-serif',
       ].join(','),
-      fontSize: 12,
+      fontSize: '1rem',
       textTransform: 'none',
     },
     body1: {

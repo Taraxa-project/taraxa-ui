@@ -57,7 +57,6 @@ const useStyles = makeStyles({
     },
     tablePagination: {
       color: 'white',
-      backgroundColor: '#282C3E',
     },
     tablePaginationCaption: {
         color: 'white'
@@ -67,11 +66,13 @@ const useStyles = makeStyles({
       },
     tablePaginationSelect: {
         color: 'white',
+      },
+    tablePaginationList: {
+        color: 'white',
         backgroundColor: '#282C3E',
       },
     tablePaginationActions: {
         color: 'white',
-        backgroundColor: '#282C3E',
       },
 });
 

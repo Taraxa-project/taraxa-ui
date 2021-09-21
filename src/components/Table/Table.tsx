@@ -48,7 +48,7 @@ export default function Table({columns, rows}: TableProps) {
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
             SelectProps={{
-              MenuProps: { classes: { paper: classes.tablePaginationSelect } }
+              MenuProps: { classes: { paper: classes.tablePaginationList } }
             }}
             classes={{
               root: classes.tablePagination,
