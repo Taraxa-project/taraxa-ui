@@ -7,12 +7,12 @@ import useStyles from './datacard-styles';
 
 
 
-export interface DataCardProps extends MCardProps  {
+export interface DataCardProps extends MCardProps {
   description: string;
   label?: string;
   input: JSX.Element;
   disabled?: boolean;
-  onClickButton?:  React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onClickButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   onClickText?: string;
   dataOptions?: JSX.Element;
   tooltip?: JSX.Element;
@@ -38,25 +38,23 @@ const DataCard = ({
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
-          
-            {tooltip && <div className={classes.tooltipIcon}>{tooltip}</div>}  
-            <Typography variant="body1" className={classes.label} color="primary">
-              {description}
-            </Typography> 
-                    
+          {tooltip && <div className={classes.tooltipIcon}>{tooltip}</div>}
+          <Typography variant="body1" className={classes.label} color="primary">
+            {description}
+          </Typography>
+
           <Typography color="primary" variant="h4" component="h4" className={classes.bottomSpacing}>
-         {title}
+            {title}
           </Typography>
           {label && <Font family='Inter'>
             <Typography className={classes.label} variant="body2" color="textSecondary">
-             {label}
+              {label}
             </Typography>
-          </Font>
-          }
+          </Font>}
         </CardContent>
         {input && input}
         {dataOptions && dataOptions}
-        {onClickButton && onClickText && 
+        {onClickButton && onClickText &&
           <CardActions className={classes.actions}>
             <Button disableElevation color="secondary" disabled={disabled} onClick={onClickButton} variant="contained" label={onClickText} size="medium"></Button>
           </CardActions>}
