@@ -24,6 +24,7 @@ const useStyles = makeStyles({
   content: {
     display: 'grid',
     height: '100%',
+    overflow: 'auto',
   },
   informationCard: {
     textAlign: 'center',
