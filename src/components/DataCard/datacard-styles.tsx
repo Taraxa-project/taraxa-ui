@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: 315,
+    width: '28.5%',
     minHeight: 180,
     textAlign: "center",
     backgroundColor: '#151823',
