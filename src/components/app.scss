@@ -2,7 +2,7 @@
   margin: 0 1% 0 1% !important;
   background-color: #151823 !important;
   color: #878ca4;
-  font-family: 'Inter, sans-serif' !important;
+  font-family: "Inter, sans-serif" !important;
 
   .MuiDrawer-paper {
     width: 240px !important;
@@ -69,26 +69,31 @@
   color: #878ca4 !important;
 }
 
+.subItemOpened,
 .subItem {
-  width: 85% !important;
-  margin: 10% 0 10% 10% !important;
-}
+  width: 211px !important;
+  height: 48px !important;
 
-.subItemOpened {
   color: #fff !important;
   background-color: #282c3e !important;
   border-radius: 8px !important;
-  height: 48px !important;
-  width: 211px !important;
   margin: 5% 0 5% 10% !important;
   text-align: center !important;
   box-sizing: inherit;
+  
   .active {
     color: #fff !important;
   }
 
   svg path {
     fill: white !important;
+  }
+}
+
+.subItem {
+  background-color: transparent !important;
+  svg path {
+    fill: #878ca4 !important;
   }
 }
 

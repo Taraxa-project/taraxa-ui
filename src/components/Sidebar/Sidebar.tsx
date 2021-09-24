@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { createStyles, CssBaseline, Drawer, List, makeStyles, Theme, ThemeProvider } from '@material-ui/core'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import theme from "../theme";
-import '../app.scss';
+import React from "react";
 import { useMediaQuery } from 'react-responsive';
+import { createStyles, CssBaseline, Drawer, List, makeStyles, Theme, ThemeProvider } from '@material-ui/core';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
+import theme from "../theme";
+
+import '../app.scss';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -37,25 +39,25 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export interface SidebarProps  {
+export interface SidebarProps {
   disablePadding?: boolean;
   dense?: boolean;
   depthStep?: 0;
   depth?: 0;
   className?: string;
-  items: { label?: string, name?: string; Link?: JSX.Element,  items?: {label?: string, name?: string, Link?: JSX.Element}[] }[];
+  items: { label?: string, name?: string; Link?: JSX.Element, items?: { label?: string, name?: string, Link?: JSX.Element }[] }[];
   onClose?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   open?: boolean;
   mobileActions?: JSX.Element;
 };
 
-interface SidebarItemProps  {
-  label?: string; 
+interface SidebarItemProps {
+  label?: string;
   name?: string;
   depthStep: number;
   depth: number;
   subItem: boolean;
-  items: { label?: string, name?: string; Link?: JSX.Element, items?: {label?: string, name?: string, Link?: JSX.Element}[] }[];
+  items: { label?: string, name?: string; Link?: JSX.Element, items?: { label?: string, name?: string, Link?: JSX.Element }[] }[];
   Link?: JSX.Element;
 };
 
@@ -73,26 +75,12 @@ const Sidebar = ({
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
-  const toggleDrawer = () => (
-    event: React.KeyboardEvent | React.MouseEvent,
-  ) => {
-    if (
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Drawer className="sidebar"
         variant={!isMobile ? 'permanent' : "temporary"}
-        classes={{
-          paper: classes.drawerPaper,
-        }} onClose={onClose} open={open} anchor={isMobile ? "right" : "left"} elevation={0}>
+        classes={{ paper: classes.drawerPaper }} onClose={onClose} open={open} anchor={isMobile ? "right" : "left"} elevation={0}>
         <List disablePadding={disablePadding} dense={dense} id="sidebarList" className={className ? className : ''}>
           {items.map((sidebarItem, index) => (
             <SidebarItem
@@ -113,16 +101,16 @@ const Sidebar = ({
   );
 }
 
-const SidebarItem = ({ label, items, depthStep, depth, subItem, Link, name} : SidebarItemProps) => {
+const SidebarItem = ({ label, items, depthStep, depth, subItem, Link, name }: SidebarItemProps) => {
   const pathname = window.location.pathname.length > 1 ? window.location.pathname.substring(1) : window.location.pathname;
   return (
     <>
       <ListItem className={name === pathname && subItem ? 'subItemOpened' : name === pathname && !subItem ? 'itemOpened' : name === 'dashboard' && pathname === '/' && !subItem ? 'itemOpened' : subItem ? 'subItem' : !subItem && items.length < 1 ? 'soloItem' : 'item'} button dense>
         {Link ? <div className='grayLink'>
-            <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : !items ? (depth + 2) * depthStep : 15, marginTop: 0 }}>
-              {Link}
-            </ListItemText>
-          </div>
+          <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : !items ? (depth + 2) * depthStep : 15, marginTop: 0 }}>
+            {Link}
+          </ListItemText>
+        </div>
           :
           <>
             <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : 15 }}>
@@ -138,7 +126,7 @@ const SidebarItem = ({ label, items, depthStep, depth, subItem, Link, name} : Si
               key={`${subItem.label}${index}`}
               depth={depth + 2}
               depthStep={depthStep}
-              subItem              
+              subItem
               label={subItem.label}
               items={subItem.items ? subItem.items : []}
               Link={subItem.Link ? subItem.Link : undefined}
