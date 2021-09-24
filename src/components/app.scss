@@ -8,7 +8,6 @@
     width: 240px !important;
     flex-shrink: 0;
     border: none;
-    overflow: hidden !important;
   }
 
   #sidebarList {
@@ -61,7 +60,7 @@
 }
 
 .item {
-  margin: 0 0 0 8px !important;
+  padding: 0 0 0 8px !important;
   .label {
     text-align: left;
     text-transform: uppercase;
