@@ -5,15 +5,15 @@ const useStyles = makeStyles({
     width: 280,
     minHeight: 180,
     textAlign: "left",
-    backgroundColor: '#282C3E',
-    paddingLeft: "24px",
-    paddingRight: "24px",
+    backgroundColor: '#40465F',
+    paddingLeft: "10px",
+    paddingRight: "5px",
     border: "1px solid #40465F",
     marginBottom: '5%',
   },
   label: {
     fontSize: 12,
-    marginTop: "10%",
+    marginTop: "7%",
     marginBottom: "15%"
   },
   tooltipIcon: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   actions: {
     display: "grid",
     paddingLeft: '2%',
-    paddingRight: '8%',
+    paddingRight: '4%',
     marginBottom: "10%"
   },
   bottomSpacing: {

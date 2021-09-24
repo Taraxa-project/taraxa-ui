@@ -4,7 +4,7 @@ import theme from "../theme";
 import Font from "react-font";
 import Button from "../Button";
 import useStyles from './datacard-styles';
-
+import { useMediaQuery } from 'react-responsive';
 
 
 export interface DataCardProps extends MCardProps {
@@ -32,11 +32,12 @@ const DataCard = ({
   tooltip,
 }: DataCardProps) => {
   const classes = useStyles();
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <MCard className={classes.root} elevation={0} variant="outlined">
+      <MCard className={isMobile ? classes.mobileRoot : classes.root} elevation={0} variant="outlined">
         <CardContent>
           {tooltip && <div className={classes.tooltipIcon}>{tooltip}</div>}
           <Typography variant="body1" className={classes.label} color="primary">

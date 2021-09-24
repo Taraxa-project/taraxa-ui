@@ -110,6 +110,7 @@ const useStyles = makeStyles((theme: Theme) =>
       gridColumn: 1,
       gridRow: 1,
       marginLeft: '40%',
+      fontSize: '20px !important',
     }
   }),
 );

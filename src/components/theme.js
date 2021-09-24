@@ -45,6 +45,7 @@ const theme = createTheme({
       ].join(','),
       fontSize: '1rem',
       textTransform: 'none',
+      height: '52px',
     },
     body1: {
       fontFamily: [

@@ -42,6 +42,7 @@ const Tooltip = ({
               <Text label={title} variant="body1" color="primary" />
             </div>
           }
+          enterTouchDelay={200}
         >
           <span><Icon/></span>
         </HtmlTooltip>
