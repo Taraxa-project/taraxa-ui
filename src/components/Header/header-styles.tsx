@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up('sm')]: {
         display: 'block',
       },
+      color: '#fff',
+      textDecoration: 'none',
     },
     search: {
       position: 'relative',
@@ -68,7 +70,8 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: '1%',
       display: 'grid',
       justifyContent: 'center',
-      alignContent: 'center'
+      alignContent: 'center',
+      textDecoration: 'none',
     },
     profileModal: {
       backgroundColor: '#282c3e',
