@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     width: 280,
     minHeight: 180,
     textAlign: "left",
-    backgroundColor: '#40465F',
+    backgroundColor: '#292C3E',
     paddingLeft: "10px",
     paddingRight: "5px",
     border: "1px solid #40465F",
