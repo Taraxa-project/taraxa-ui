@@ -15,12 +15,12 @@ import useStyles from './footer-styles';
 import { useMediaQuery } from 'react-responsive';
 
 
-export interface FooterProps extends MBottomNavigationActionProps  {
-  items: { label: string; Icon: JSX.Element}[];
+export interface FooterProps extends MBottomNavigationActionProps {
+  items: { label: string; Icon: JSX.Element }[];
   description?: string;
   title: string;
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  links?: { label: string; }[];
+  links?: { link: string; label: string; }[];
 };
 
 const Footer = ({
@@ -37,35 +37,37 @@ const Footer = ({
       <CssBaseline />
       <div className={classes.footer}>
         <div className={isMobile ? classes.logoMobile : classes.logo}>
-          {Icon && <div className={isMobile ? classes.footerSVGMobile : classes.footerSVG}><Icon /></div>} <Text className={isMobile ? classes.logoTextMobile : classes.logoText} label={title} variant="h4" color="primary"/>
+          {Icon && <div className={isMobile ? classes.footerSVGMobile : classes.footerSVG}><Icon /></div>} <Text className={isMobile ? classes.logoTextMobile : classes.logoText} label={title} variant="h4" color="primary" />
           {items && !isMobile && <ul className={classes.footerUl}>
             {items.map((item) => (
-            <li className={classes.footerLi}>{item.Icon}</li>
+              <li className={classes.footerLi}>{item.Icon}</li>
             ))}
-            </ul>  
+          </ul>
           }
         </div>
         {description && <div className={isMobile ? classes.descriptionMobile : classes.description}>
-          <Text label={description} variant="body1" color="textSecondary" style={{ textAlign: 'left'}}/>
+          <Text label={description} variant="body1" color="textSecondary" style={{ textAlign: 'left' }} />
         </div>}
         {isMobile && items && <div className={classes.mobileIcons}>
-            <ul className={classes.mobileFooterUL}>
-              {items.map((item) => (
+          <ul className={classes.mobileFooterUL}>
+            {items.map((item) => (
               <li className={classes.footerLi}>{item.Icon}</li>
-              ))}
-            </ul>
-          </div>
+            ))}
+          </ul>
+        </div>
         }
         {/* <BottomNavigation showLabels={showLabels} className={classes.bottomNavigation}>
           {items.map((item) => (
             <BottomNavigationAction className={classes.bottomNavigationItem} label={item.label} value={item.value} icon={GetIcon(item.icon)} />
           ))}
         </BottomNavigation> */}
-        {links && 
+        {links &&
           <div className={isMobile ? classes.footerListMobile : classes.footerList}>
-            {links.map((link, index) => (
-              <Text label={link.label} variant="body1" color="textSecondary" className={classes.footerParagraph}/>
-          ))}
+            {links.map(link => (
+              <a href={link.link} target="_blank">
+                <Text label={link.label} variant="body1" color="textSecondary" className={classes.footerParagraph} />
+              </a>
+            ))}
           </div>
         }
       </div>
@@ -76,22 +78,22 @@ const Footer = ({
 const GetIcon = (name: string) => {
   switch (name) {
     case "twitter":
-        return <TwitterIcon/>
+      return <TwitterIcon />
       break;
     case "facebook":
-        return <FacebookIcon/>
+      return <FacebookIcon />
     case "instagram":
-        return <InstagramIcon/>
+      return <InstagramIcon />
     case "recent":
-        return <RestoreIcon/>
+      return <RestoreIcon />
     case "favorite":
-        return <FavoriteIcon/>
-    case "location": 
-        return <LocationOnIcon/>
+      return <FavoriteIcon />
+    case "location":
+      return <LocationOnIcon />
     case "discord":
-        return <ChatIcon/>
+      return <ChatIcon />
     case "send":
-        return <SendIcon/>
+      return <SendIcon />
     default:
       break;
   }
