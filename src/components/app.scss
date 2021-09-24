@@ -1,5 +1,5 @@
 .sidebar {
-  margin: 0 1% 0 1% !important;
+  margin: 0 0 0 32px !important;
   background-color: #151823 !important;
   color: #878ca4;
   font-family: "Inter, sans-serif" !important;
@@ -8,6 +8,7 @@
     width: 240px !important;
     flex-shrink: 0;
     border: none;
+    overflow: hidden !important;
   }
 
   #sidebarList {
@@ -16,44 +17,9 @@
 }
 
 .sidebar a {
+  display: block;
   color: #878ca4;
   text-decoration: none !important;
-  display: -webkit-inline-box !important;
-}
-
-.itemOpened {
-  color: #fff !important;
-  background-color: #282c3e !important;
-  margin-left: 10% !important;
-  border-radius: 8px !important;
-  height: 48px !important;
-  width: 211px !important;
-  text-align: center !important;
-
-  .active {
-    color: #fff !important;
-  }
-  svg path {
-    stroke: white !important;
-  }
-}
-
-.itemOpened a {
-  text-decoration: none !important;
-  display: -webkit-inline-box !important;
-  color: #fff !important;
-}
-
-.item {
-  height: 48px !important;
-  width: 211px !important;
-}
-
-.soloItem {
-  margin: 0 !important;
-  margin-left: 10% !important;
-  height: 48px !important;
-  width: 211px !important;
 }
 
 .whiteLink {
@@ -63,24 +29,19 @@
   padding-top: 5% !important;
 }
 
-.grayLink {
-  text-decoration: none !important;
-  display: -webkit-inline-box !important;
-  color: #878ca4 !important;
-}
-
 .subItemOpened,
-.subItem {
-  width: 211px !important;
-  height: 48px !important;
-
+.itemOpened,
+.item,
+.subItem,
+.soloItem {
   color: #fff !important;
   background-color: #282c3e !important;
   border-radius: 8px !important;
-  margin: 5% 0 5% 10% !important;
   text-align: center !important;
   box-sizing: inherit;
-  
+  padding: 0 !important;
+  margin: 5px 0 5px 0 !important;
+
   .active {
     color: #fff !important;
   }
@@ -90,10 +51,22 @@
   }
 }
 
-.subItem {
+.item,
+.subItem,
+.soloItem {
   background-color: transparent !important;
   svg path {
     fill: #878ca4 !important;
+  }
+}
+
+.item {
+  margin: 0 0 0 8px !important;
+  .label {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4f5368;
   }
 }
 
