@@ -9,7 +9,7 @@ import Font from 'react-font';
 import { useMediaQuery } from 'react-responsive';
 
 
-export interface HeaderProps extends AppBarProps  {
+export interface HeaderProps extends AppBarProps {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   hamburger?: JSX.Element;
   wallet?: JSX.Element;
@@ -18,7 +18,7 @@ export interface HeaderProps extends AppBarProps  {
   showProfileModal?: boolean;
 };
 
-export default function PrimarySearchAppBar({color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, hamburger}: HeaderProps) {
+export default function PrimarySearchAppBar({ color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, hamburger }: HeaderProps) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
@@ -28,14 +28,19 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, w
       <div className={classes.grow}>
         <AppBar color={color} position={position} elevation={elevation}>
           <Toolbar>
-            {Icon && <div className={classes.headerIconContainer} ><Icon />
-                       <div style={{width: '20px'}}/>
-                     </div>
+
+
+            {Icon && <a className={classes.headerIconContainer} href="/">
+              <Icon />
+              <div style={{ width: '20px' }} />
+            </a>
             }
-            
-            <Typography className={classes.title} variant="h6" noWrap>
-              <Font family="Inter"><>Taraxa Community</></Font>
-            </Typography>
+
+            <a className={classes.title} href="/">
+              <Typography variant="h6" noWrap>
+                <Font family="Inter"><>Taraxa Community</></Font>
+              </Typography>
+            </a>
             {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -54,11 +59,11 @@ export default function PrimarySearchAppBar({color, position, elevation, Icon, w
               {wallet}
               <div className={classes.button}>{hamburger && isMobile ? hamburger : button}</div>
             </div>
-            
+
           </Toolbar>
         </AppBar>
       </div>
       {profileModal && showProfileModal && <div className={classes.profileModal}>{profileModal}</div>}
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }

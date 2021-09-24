@@ -106,16 +106,11 @@ const SidebarItem = ({ label, items, depthStep, depth, subItem, Link, name }: Si
   return (
     <>
       <ListItem className={name === pathname && subItem ? 'subItemOpened' : name === pathname && !subItem ? 'itemOpened' : name === 'dashboard' && pathname === '/' && !subItem ? 'itemOpened' : subItem ? 'subItem' : !subItem && items.length < 1 ? 'soloItem' : 'item'} button dense>
-        {Link ? <div className='grayLink'>
-          <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : !items ? (depth + 2) * depthStep : 15, marginTop: 0 }}>
-            {Link}
-          </ListItemText>
-        </div>
+        {Link ?
+          <ListItemText primary={Link} style={{ paddingLeft: subItem ? depth * depthStep : !items ? (depth + 2) * depthStep : 15, marginTop: 0, marginBottom: 0 }}></ListItemText>
           :
           <>
-            <ListItemText style={{ paddingLeft: subItem ? depth * depthStep : 15 }}>
-              {label}
-            </ListItemText>
+            <ListItemText primary={<div className="label">{label}</div>} style={{ paddingLeft: subItem ? depth * depthStep : 15 }}></ListItemText>
           </>
         }
       </ListItem>

@@ -13,18 +13,15 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     logo: {
       gridRow: 1,
-      width: '70.5%',
       borderTop: '1px solid #40465f',
       paddingTop: '2%',
-      marginLeft: '20%',
       marginBottom: '2%',
       alignItems: 'center',
       display: 'grid',
-      gridTemplateColumns: '30% 30% 60%',
+      gridTemplateColumns: '25% 75%',
     },
     logoMobile: {
       gridRow: 1,
-      width: '100%',
       borderTop: '1px solid #40465f',
       paddingTop: '2%',
       marginBottom: '2%',
@@ -33,15 +30,12 @@ const useStyles = makeStyles((theme: Theme) =>
       gridTemplateColumns: '30% 30% 60%',
     },
     description: {
-      width: '75%',
       gridRow: 2,
-      marginLeft: '20.5%',
       marginBottom: '4%'
     },
     descriptionMobile: {
       width: '80%',
       gridRow: 2,
-      marginLeft: '5%',
       marginBottom: '4%',
       paddingRight: '2%'
     },
@@ -57,20 +51,17 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     footerList: {
       gridRow: 4,
-      marginLeft: '20.5% !important',
       display: 'flex',
       marginBottom: '5%',
       textAlign: 'left'
     },
     footerListMobile: {
       gridRow: 4,
-      marginLeft: '5% !important',
       display: 'flex',
       marginBottom: '5%',
       textAlign: 'left'
     },
     footerParagraph: {
-      marginRight: '5%',
       cursor: 'pointer',
     },
     mobileIcons: {
@@ -82,8 +73,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: '0 !important'
     },
     footerUl: {
-      marginLeft: '130%',
-      width: '100%',
+      textAlign: 'right',
     },
     footerLi: {
       display: 'inline',
