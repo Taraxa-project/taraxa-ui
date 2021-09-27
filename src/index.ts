@@ -24,6 +24,8 @@ import Tooltip from "./components/Tooltip";
 import TopCard from "./components/TopCard";
 import SubmitCard from "./components/SubmitCard";
 import Loading from "./components/Loading";
+import Menu from "./components/Menu";
+import MenuItem from "./components/MenuItem";
 
 export {
   Button,
@@ -52,4 +54,6 @@ export {
   TopCard,
   SubmitCard,
   Loading,
+  Menu,
+  MenuItem,
 };
