@@ -18,7 +18,7 @@ export interface HeaderProps extends AppBarProps {
   showProfileModal?: boolean;
 };
 
-export default function PrimarySearchAppBar({ color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, hamburger }: HeaderProps) {
+function Header({ color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, hamburger }: HeaderProps) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
@@ -28,8 +28,6 @@ export default function PrimarySearchAppBar({ color, position, elevation, Icon, 
       <div className={classes.grow}>
         <AppBar color={color} position={position} elevation={elevation}>
           <Toolbar>
-
-
             {Icon && <a className={classes.headerIconContainer} href="/">
               <Icon />
               <div style={{ width: '20px' }} />
@@ -38,7 +36,7 @@ export default function PrimarySearchAppBar({ color, position, elevation, Icon, 
 
             <a className={classes.title} href="/">
               <Typography variant="h6" noWrap>
-                <Font family="Inter"><>Taraxa Community</></Font>
+                <Font family="Poppins"><>Taraxa Community</></Font>
               </Typography>
             </a>
             {/* <div className={classes.search}>
@@ -67,3 +65,5 @@ export default function PrimarySearchAppBar({ color, position, elevation, Icon, 
     </ThemeProvider >
   );
 }
+
+export default Header;
