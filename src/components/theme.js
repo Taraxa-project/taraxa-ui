@@ -1,108 +1,90 @@
-import { createTheme } from '@material-ui/core/styles'
+import { createTheme } from "@material-ui/core/styles";
 
 const theme = createTheme({
   typography: {
     h1: {
-      fontFamily: [
-        'Poppins',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Poppins", "sans-serif"].join(","),
     },
     h2: {
-      fontFamily: [
-        'Poppins',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Poppins", "sans-serif"].join(","),
     },
     h3: {
-      fontFamily: [
-        'Poppins',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Poppins", "sans-serif"].join(","),
     },
     h4: {
-      fontFamily: [
-        'Poppins',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Poppins", "sans-serif"].join(","),
     },
     h5: {
-      fontFamily: [
-        'Poppins',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Poppins", "sans-serif"].join(","),
     },
     h6: {
-      fontFamily: [
-        'Poppins',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Poppins", "sans-serif"].join(","),
     },
     button: {
-      fontFamily: [
-        'Inter',
-        'sans-serif',
-      ].join(','),
-      fontSize: '1rem',
-      textTransform: 'none',
-      height: '52px',
+      fontFamily: ["Inter", "sans-serif"].join(","),
+      fontSize: "1rem",
+      textTransform: "none",
+      height: "52px",
     },
     body1: {
-      fontFamily: [
-        'Inter',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Inter", "sans-serif"].join(","),
     },
     body2: {
-      fontFamily: [
-        'Inter',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ["Inter", "sans-serif"].join(","),
     },
-    fontFamily: [
-      'Inter',
-      'sans-serif',
-    ].join(','),
+    fontFamily: ["Inter", "sans-serif"].join(","),
   },
   palette: {
     primary: {
-      main: '#FFF',
+      main: "#FFF",
     },
     secondary: {
-      main: '#15AC5B',
-      contrastText: "#fff"
+      main: "#15AC5B",
+      contrastText: "#FFF",
     },
     text: {
-      primary: '#FFF',
-      secondary: '#878CA4',
+      primary: "#FFF",
+      secondary: "#878CA4",
+    },
+    action: {
+      disabledBackground: "",
+      disabled: "#FFF",
+      disabledOpacity: 50,
     },
   },
   overrides: {
     MuiAppBar: {
       colorPrimary: {
         backgroundColor: "#282C3E",
-        color: "#FFF"
+        color: "#FFF",
       },
-      fontFamily: 'Inter'
+      fontFamily: "Inter",
     },
-    MuiCssBaseline:  {
-      '@global': {
-        '*::-webkit-scrollbar': {
-          width: '3px'
+    MuiButtonBase: {
+      root: {
+        "&.Mui-disabled": {
+          opacity: 0.7,
         },
-        '*::-webkit-scrollbar-thumb': {
-          backgroundColor: '#878CA4',
-        }
-      }
+      },
+    },
+    MuiCssBaseline: {
+      "@global": {
+        "*::-webkit-scrollbar": {
+          width: "3px",
+        },
+        "*::-webkit-scrollbar-thumb": {
+          backgroundColor: "#878CA4",
+        },
+      },
     },
     MuiFormControlLabel: {
       label: {
-        color: 'white',
+        color: "#FFF",
       },
     },
     h4: {
-      fontFamily: 'Poppins'
-    }
+      fontFamily: "Poppins",
+    },
   },
 });
 
