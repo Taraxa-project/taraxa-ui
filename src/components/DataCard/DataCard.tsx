@@ -54,7 +54,7 @@ const DataCard = ({
           </Font>}
         </CardContent>
         {input && input}
-        {dataOptions && dataOptions}
+        {dataOptions && <div className={classes.chips}>{dataOptions}</div>}
         {onClickButton && onClickText &&
           <CardActions className={classes.actions}>
             <Button disableElevation color="secondary" disabled={disabled} onClick={onClickButton} variant="contained" label={onClickText} size="medium"></Button>

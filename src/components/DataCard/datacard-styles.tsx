@@ -6,8 +6,8 @@ const useStyles = makeStyles({
     minHeight: 180,
     textAlign: "center",
     backgroundColor: '#151823',
-    paddingLeft: "2%",
-    paddingRight: "1%",
+    paddingLeft: "24px",
+    paddingRight: "24px",
     border: "1px solid #15AC5B",
   },
   mobileRoot: {
@@ -15,9 +15,13 @@ const useStyles = makeStyles({
     minHeight: 180,
     textAlign: "center",
     backgroundColor: '#151823',
-    paddingLeft: "2%",
-    paddingRight: "1%",
+    paddingLeft: "24px",
+    paddingRight: "24px",
     border: "1px solid #15AC5B",
+  },
+  chips: {
+    marginTop: "13px",
+    marginBottom: "22px"
   },
   title: {
     marginBottom: '5%',
@@ -39,7 +43,8 @@ const useStyles = makeStyles({
   },
   actions: {
     display: "grid",
-    marginBottom: "5%"
+    marginBottom: "44px",
+    padding: 0,
   },
   icon: {
     marginBottom: '5%',
