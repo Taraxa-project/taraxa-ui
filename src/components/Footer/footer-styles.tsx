@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     footer: {
+      marginTop: "56px",
       width: '100%',
       backgroundColor: '#151823',
       color: '#fff',

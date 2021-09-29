@@ -1,4 +1,3 @@
-import BottomNavigation from '@material-ui/core/BottomNavigation';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -9,7 +8,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 import SendIcon from '@material-ui/icons/Send';
 import React from 'react';
 import theme from '../theme';
-import { BottomNavigationAction, BottomNavigationActionProps as MBottomNavigationActionProps, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { BottomNavigationActionProps as MBottomNavigationActionProps, CssBaseline, ThemeProvider } from '@material-ui/core';
 import Text from '../Text';
 import useStyles from './footer-styles';
 import { useMediaQuery } from 'react-responsive';
@@ -40,7 +39,7 @@ const Footer = ({
           {Icon && <div className={isMobile ? classes.footerSVGMobile : classes.footerSVG}><Icon /></div>} <Text className={isMobile ? classes.logoTextMobile : classes.logoText} label={title} variant="h4" color="primary" />
           {items && !isMobile && <ul className={classes.footerUl}>
             {items.map((item) => (
-              <li className={classes.footerLi}>{item.Icon}</li>
+              <li key={item.label} className={classes.footerLi}>{item.Icon}</li>
             ))}
           </ul>
           }
@@ -51,7 +50,7 @@ const Footer = ({
         {isMobile && items && <div className={classes.mobileIcons}>
           <ul className={classes.mobileFooterUL}>
             {items.map((item) => (
-              <li className={classes.footerLi}>{item.Icon}</li>
+              <li key={item.label} className={classes.footerLi}>{item.Icon}</li>
             ))}
           </ul>
         </div>
@@ -64,7 +63,7 @@ const Footer = ({
         {links &&
           <div className={isMobile ? classes.footerListMobile : classes.footerList}>
             {links.map(link => (
-              <a href={link.link} target="_blank">
+              <a key={link.label} href={link.link} target="_blank">
                 <Text label={link.label} variant="body1" color="textSecondary" className={classes.footerParagraph} />
               </a>
             ))}
