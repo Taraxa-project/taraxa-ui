@@ -24,7 +24,6 @@ const theme = createTheme({
       fontFamily: ["Inter", "sans-serif"].join(","),
       fontSize: "1rem",
       textTransform: "none",
-      height: "52px",
     },
     body1: {
       fontFamily: ["Inter", "sans-serif"].join(","),
@@ -65,6 +64,37 @@ const theme = createTheme({
         "&.Mui-disabled": {
           opacity: 0.7,
         },
+      },
+    },
+    MuiButton: {
+      root: {
+        height: "52px",
+      },
+      outlinedSizeSmall: {
+        height: "32px",
+        padding: "8px 16px",
+      },
+      outlinedSecondary: {
+        backgroundColor: '#31364B',
+        borderColor: '#6A7085',
+        color: '#FFF',
+        borderRadius: '8px',
+        "&:hover": {
+          borderColor: '#6A7085',
+        },
+        "&.Mui-disabled": {
+          backgroundColor: '#202534',
+          borderColor: '#282C3E',
+          color: '#40465F',
+        }
+      },
+      containedSizeSmall: {
+        height: "32px",
+        padding: "8px 16px",
+      },
+      textSizeSmall: {
+        height: "32px",
+        padding: "8px 16px",
       },
     },
     MuiCssBaseline: {

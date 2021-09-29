@@ -2,14 +2,13 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: '28.5%',
+    width: "320px",
     minHeight: 180,
     textAlign: "center",
     backgroundColor: '#151823',
     paddingLeft: "2%",
     paddingRight: "1%",
     border: "1px solid #15AC5B",
-    marginBottom: '5% !important',
   },
   mobileRoot: {
     width: '85%',
@@ -19,7 +18,10 @@ const useStyles = makeStyles({
     paddingLeft: "2%",
     paddingRight: "1%",
     border: "1px solid #15AC5B",
-    marginBottom: '5% !important',
+  },
+  title: {
+    marginBottom: '5%',
+    fontWeight: 700,
   },
   iconContainer: {
     display: 'flex',
@@ -38,9 +40,6 @@ const useStyles = makeStyles({
   actions: {
     display: "grid",
     marginBottom: "5%"
-  },
-  bottomSpacing: {
-    marginBottom: '5%'
   },
   icon: {
     marginBottom: '5%',
