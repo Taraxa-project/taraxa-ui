@@ -43,7 +43,7 @@ const IconCard = ({
         </CardContent>
         {onClickButton && onClickText && 
           <CardActions className={classes.actions}>
-            <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText} size="small"></Button>
+            <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText}></Button>
           </CardActions>}
       </MCard>
     </ThemeProvider>
