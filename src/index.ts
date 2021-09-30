@@ -26,6 +26,7 @@ import SubmitCard from "./components/SubmitCard";
 import Loading from "./components/Loading";
 import Menu from "./components/Menu";
 import MenuItem from "./components/MenuItem";
+import Notification from "./components/Notification";
 
 export {
   Button,
@@ -56,4 +57,5 @@ export {
   Loading,
   Menu,
   MenuItem,
+  Notification,
 };

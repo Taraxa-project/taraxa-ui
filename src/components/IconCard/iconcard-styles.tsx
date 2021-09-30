@@ -9,7 +9,6 @@ const useStyles = makeStyles({
     paddingLeft: "10px",
     paddingRight: "5px",
     border: "1px solid #40465F",
-    marginBottom: '5%',
   },
   label: {
     fontSize: 12,

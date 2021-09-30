@@ -8,37 +8,29 @@ import useStyles from "./togglebutton-styles";
 
 export interface ToggleButtonProps extends ToggleButtonGroupProps {
   currentValue: string;
-  data: {value: string, label: string}[];
+  data: { value: string, label: string }[];
 };
 
 
 const ToggleButton = ({
-  exclusive,
-  onChange,
-  orientation,
-  size,
   currentValue,
   data,
-  className
+  ...props
 }: ToggleButtonProps) => {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <ToggleButtonGroup
-      value={currentValue}
-      onChange={onChange}
-      exclusive={exclusive}
-      size={size}
-      orientation={orientation}
-      className={className}
-    >
-      {data.map((button, index) => (
-        <MToggleButton className={button.value === currentValue ? classes.selected : classes.button} value={button.value}>
-          {button.label}
-        </MToggleButton>
-      ))}
-    </ToggleButtonGroup>
+      <CssBaseline />
+      <ToggleButtonGroup
+        value={currentValue}
+        {...props}
+      >
+        {data.map(button => (
+          <MToggleButton className={button.value === currentValue ? classes.selected : classes.button} value={button.value}>
+            {button.label}
+          </MToggleButton>
+        ))}
+      </ToggleButtonGroup>
     </ThemeProvider>
   );
 };
