@@ -18,7 +18,7 @@ export interface HeaderProps extends AppBarProps {
   showProfileModal?: boolean;
 };
 
-function Header({ color, position, elevation, Icon, wallet, button, profileModal, showProfileModal, hamburger }: HeaderProps) {
+function Header({ Icon, wallet, button, profileModal, showProfileModal, hamburger, ...props }: HeaderProps) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
@@ -26,7 +26,7 @@ function Header({ color, position, elevation, Icon, wallet, button, profileModal
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className={classes.grow}>
-        <AppBar color={color} position={position} elevation={elevation}>
+        <AppBar {...props}>
           <Toolbar>
             {Icon && <a className={classes.headerIconContainer} href="/">
               <Icon />

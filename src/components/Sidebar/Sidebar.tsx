@@ -46,9 +46,10 @@ export interface SidebarProps {
   depth?: 0;
   className?: string;
   items: { label?: string, name?: string; Link?: JSX.Element, items?: { label?: string, name?: string, Link?: JSX.Element }[] }[];
-  onClose?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onClose?: () => void;
   open?: boolean;
   mobileActions?: JSX.Element;
+  hamburger?: JSX.Element;
 };
 
 interface SidebarItemProps {
@@ -70,7 +71,8 @@ const Sidebar = ({
   className,
   onClose,
   open,
-  mobileActions
+  mobileActions,
+  hamburger
 }: SidebarProps) => {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -80,7 +82,8 @@ const Sidebar = ({
       <CssBaseline />
       <Drawer className="sidebar"
         variant={!isMobile ? 'permanent' : "temporary"}
-        classes={{ paper: classes.drawerPaper }} onClose={onClose} open={open} anchor={isMobile ? "right" : "left"} elevation={0}>
+        classes={{ paper: classes.drawerPaper }} open={open} onClose={onClose} anchor={isMobile ? "right" : "left"} elevation={0}>
+        {hamburger && hamburger}
         <List disablePadding={disablePadding} dense={dense} id="sidebarList" className={className ? className : ''}>
           {items.map((sidebarItem, index) => (
             <SidebarItem
@@ -94,8 +97,8 @@ const Sidebar = ({
               name={sidebarItem.name ? sidebarItem.name : undefined}
             />
           ))}
-          {isMobile && mobileActions && mobileActions}
         </List>
+        {isMobile && mobileActions && mobileActions}
       </Drawer>
     </ThemeProvider>
   );

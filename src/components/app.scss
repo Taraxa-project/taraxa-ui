@@ -1,11 +1,44 @@
 .sidebar {
-  margin: 0 0 0 32px !important;
+  &.MuiDrawer-docked {
+    margin: 0 0 0 32px !important;
+
+    .hamburger {
+      display: none;
+    }
+
+    & > .MuiDrawer-paper {
+      width: 240px !important;
+    }
+  }
+
+  &.MuiDrawer-modal {
+    & > .MuiDrawer-paper {
+      width: 90%;
+      padding: 24px;
+      background-color: #202534 !important;
+
+      & > button {
+        margin-bottom: 12px;
+      }
+
+      & > button:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    #sidebarList {
+      width: 263px;
+      background-color: transparent;
+      margin-top: 32px;
+      margin-bottom: 24px;
+    }
+  }
+
   background-color: #151823 !important;
   color: #878ca4;
   font-family: "Inter, sans-serif" !important;
 
   .MuiDrawer-paper {
-    width: 240px !important;
     flex-shrink: 0;
     border: none;
   }

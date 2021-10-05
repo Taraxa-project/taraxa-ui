@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme: Theme) =>
       zIndex: 1400
     },
     title: {
+      display: 'none',
       fontSize: '16px !important',
       [theme.breakpoints.up('sm')]: {
         display: 'block',
