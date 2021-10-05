@@ -1,6 +1,6 @@
 import React from "react";
 import { useMediaQuery } from 'react-responsive';
-import { createStyles, CssBaseline, Drawer, List, makeStyles, Theme, ThemeProvider } from '@material-ui/core';
+import { createStyles, CssBaseline, Drawer, DrawerProps, List, makeStyles, Theme, ThemeProvider } from '@material-ui/core';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
@@ -39,17 +39,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export interface SidebarProps {
+export interface SidebarProps extends DrawerProps {
   disablePadding?: boolean;
   dense?: boolean;
   depthStep?: 0;
   depth?: 0;
   className?: string;
   items: { label?: string, name?: string; Link?: JSX.Element, items?: { label?: string, name?: string, Link?: JSX.Element }[] }[];
-  onClose?: () => void;
-  open?: boolean;
-  mobileActions?: JSX.Element;
-  hamburger?: JSX.Element;
 };
 
 interface SidebarItemProps {
@@ -69,10 +65,8 @@ const Sidebar = ({
   depth,
   items,
   className,
-  onClose,
-  open,
-  mobileActions,
-  hamburger
+  children,
+  ...props
 }: SidebarProps) => {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
@@ -82,8 +76,7 @@ const Sidebar = ({
       <CssBaseline />
       <Drawer className="sidebar"
         variant={!isMobile ? 'permanent' : "temporary"}
-        classes={{ paper: classes.drawerPaper }} open={open} onClose={onClose} anchor={isMobile ? "right" : "left"} elevation={0}>
-        {hamburger && hamburger}
+        classes={{ paper: classes.drawerPaper }}  anchor={isMobile ? "right" : "left"} elevation={0} {...props}>
         <List disablePadding={disablePadding} dense={dense} id="sidebarList" className={className ? className : ''}>
           {items.map((sidebarItem, index) => (
             <SidebarItem
@@ -98,7 +91,7 @@ const Sidebar = ({
             />
           ))}
         </List>
-        {isMobile && mobileActions && mobileActions}
+        {children}
       </Drawer>
     </ThemeProvider>
   );

@@ -12,9 +12,17 @@
   }
 
   &.MuiDrawer-modal {
+    position: relative;
+
+    .hamburger {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+    }
+
     & > .MuiDrawer-paper {
       width: 90%;
-      padding: 24px;
+      padding: 44px 24px 24px;
       background-color: #202534 !important;
 
       & > button {

@@ -10,35 +10,31 @@ import { useMediaQuery } from 'react-responsive';
 
 export interface HeaderProps extends AppBarProps {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  hamburger?: JSX.Element;
-  wallet?: JSX.Element;
-  button?: JSX.Element;
   profileModal?: JSX.Element;
   showProfileModal?: boolean;
 };
 
-function Header({ Icon, wallet, button, profileModal, showProfileModal, hamburger, ...props }: HeaderProps) {
+function Header({ Icon, profileModal, showProfileModal, children, ...props }: HeaderProps) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className={classes.grow}>
-        <AppBar {...props}>
-          <Toolbar>
-            {Icon && <a className={classes.headerIconContainer} href="/">
-              <Icon />
-              <div style={{ width: '20px' }} />
-            </a>
-            }
+      <AppBar {...props}>
+        <Toolbar>
+          {Icon && <a className={classes.headerIconContainer} href="/">
+            <Icon />
+            <div style={{ width: '20px' }} />
+          </a>
+          }
 
-            <a className={classes.titleContainer} href="/">
-              <Typography variant="h2" noWrap className={classes.title}>
-                <>Taraxa Community</>
-              </Typography>
-            </a>
-            {/* <div className={classes.search}>
+          <a className={classes.titleContainer} href="/">
+            <Typography variant="h2" noWrap className={classes.title}>
+              <>Taraxa Community</>
+            </Typography>
+          </a>
+          {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
@@ -51,15 +47,12 @@ function Header({ Icon, wallet, button, profileModal, showProfileModal, hamburge
                 inputProps={{ 'aria-label': 'search' }}
               />
             </div> */}
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              {wallet}
-              <div className={classes.button}>{hamburger && isMobile ? hamburger : button}</div>
-            </div>
+          <div className={isMobile ? [classes.sectionDesktop, classes.sectionDesktopMobile].join(' ') : classes.sectionDesktop}>
+            {children}
+          </div>
 
-          </Toolbar>
-        </AppBar>
-      </div>
+        </Toolbar>
+      </AppBar>
       {profileModal && showProfileModal && <div className={classes.profileModal}>{profileModal}</div>}
     </ThemeProvider >
   );

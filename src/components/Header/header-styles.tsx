@@ -2,10 +2,6 @@ import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    grow: {
-      flexGrow: 1,
-      zIndex: 1400
-    },
     titleContainer: {
       display: 'none',
       color: '#fff',
@@ -58,13 +54,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     sectionDesktop: {
       display: 'flex',
-      width: '40%',
+      flex: 1,
       alignItems: 'center',
       justifyContent: 'flex-end',
     },
-    button: {
-      marginLeft: '5%',
-      marginRigth: '3%',
+    sectionDesktopMobile: {
+      justifyContent: 'space-between',
     },
     headerIconContainer: {
       backgroundColor: '#202534',

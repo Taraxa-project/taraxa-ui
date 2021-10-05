@@ -1,5 +1,6 @@
 import { createTheme } from "@material-ui/core/styles";
 
+const defaultTheme = createTheme();
 const theme = createTheme({
   typography: {
     h1: {
@@ -59,6 +60,15 @@ const theme = createTheme({
       },
       fontFamily: "Inter",
     },
+    MuiToolbar: {
+      regular: {
+        minHeight: "72px",
+        [defaultTheme.breakpoints.up('sm')]: {
+          minHeight: "72px",
+        },
+      },
+      fontFamily: "Inter",
+    },
     MuiButtonBase: {
       root: {
         "&.Mui-disabled": {
@@ -75,18 +85,18 @@ const theme = createTheme({
         padding: "8px 16px",
       },
       outlinedSecondary: {
-        backgroundColor: '#31364B',
-        borderColor: '#6A7085',
-        color: '#FFF',
-        borderRadius: '8px',
+        backgroundColor: "#31364B",
+        borderColor: "#6A7085",
+        color: "#FFF",
+        borderRadius: "8px",
         "&:hover": {
-          borderColor: '#6A7085',
+          borderColor: "#6A7085",
         },
         "&.Mui-disabled": {
-          backgroundColor: '#202534',
-          borderColor: '#282C3E',
-          color: '#40465F',
-        }
+          backgroundColor: "#202534",
+          borderColor: "#282C3E",
+          color: "#40465F",
+        },
       },
       containedSizeSmall: {
         height: "32px",
