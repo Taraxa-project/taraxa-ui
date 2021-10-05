@@ -6,14 +6,18 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       zIndex: 1400
     },
-    title: {
+    titleContainer: {
       display: 'none',
-      fontSize: '16px !important',
+      color: '#fff',
+      textDecoration: 'none',
       [theme.breakpoints.up('sm')]: {
         display: 'block',
       },
-      color: '#fff',
-      textDecoration: 'none',
+    },
+    title: {
+      fontSize: '16px !important',
+      fontFamily: 'Inter',
+      fontWeight: 700,
     },
     search: {
       position: 'relative',

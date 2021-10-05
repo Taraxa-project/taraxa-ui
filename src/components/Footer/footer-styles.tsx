@@ -6,39 +6,36 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     footer: {
+      borderTop: '1px solid #40465f',
       marginTop: "56px",
       width: '100%',
-      backgroundColor: '#151823',
-      color: '#fff',
-      fontFamily: 'Inter, sans-serif !important',
+      paddingTop: '32px',
+    },
+    footerMobile: {
+      borderTop: '1px solid #40465f',
+      marginTop: "56px",
+      width: '100%',
+      padding: '32px',
     },
     logo: {
-      gridRow: 1,
-      borderTop: '1px solid #40465f',
-      paddingTop: '2%',
-      marginBottom: '2%',
+      display: 'flex',
       alignItems: 'center',
-      display: 'grid',
-      gridTemplateColumns: '25% 75%',
     },
     logoMobile: {
       gridRow: 1,
-      borderTop: '1px solid #40465f',
-      paddingTop: '2%',
-      marginBottom: '2%',
       alignItems: 'center',
       display: 'grid',
       gridTemplateColumns: '30% 30% 60%',
     },
     description: {
       gridRow: 2,
-      marginBottom: '4%'
+      marginTop: '32px',
+      marginBottom: '32px',
     },
     descriptionMobile: {
-      width: '80%',
       gridRow: 2,
-      marginBottom: '4%',
-      paddingRight: '2%'
+      marginTop: '32px',
+      marginBottom: '32px',
     },
     bottomNavigation: {
       gridRow: 3,
@@ -71,37 +68,28 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     mobileFooterUL: {
       width: '100%',
-      paddingLeft: '0 !important'
+      paddingLeft: '0 !important',
+      display: 'flex',
     },
     footerUl: {
       textAlign: 'right',
+      display: 'flex',
     },
     footerLi: {
-      display: 'inline',
-      marginLeft: '10%'
+      display: 'flex',
+      marginLeft: '16px',
+      width: '40px',
+      height: '40px',
+      alignItems: 'center',
     },
     footerSVG: {
       textAlign: 'left',
-      gridColumn: 1,
-      gridRow: 1,
+      flex: 1,
     },
     footerSVGMobile: {
       textAlign: 'left',
       gridColumn: 1,
       gridRow: 1,
-      marginLeft: '16% !important',
-    },
-    logoText: {
-      width: '80%',
-      gridColumn: 1,
-      gridRow: 1,
-    },
-    logoTextMobile: {
-      width: '80%',
-      gridColumn: 1,
-      gridRow: 1,
-      marginLeft: '40%',
-      fontSize: '20px !important',
     }
   }),
 );

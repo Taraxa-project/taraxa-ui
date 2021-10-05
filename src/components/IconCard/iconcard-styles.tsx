@@ -9,6 +9,11 @@ const useStyles = makeStyles({
     paddingLeft: "10px",
     paddingRight: "5px",
     border: "1px solid #40465F",
+    display: "flex",
+    flexDirection: "column",
+  },
+  content: {
+    flex: 1,
   },
   label: {
     fontSize: 12,

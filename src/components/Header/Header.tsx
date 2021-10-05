@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import { CssBaseline, AppBarProps, AppBar } from '@material-ui/core';
 import theme from "../theme";
 import useStyles from './header-styles';
-import Font from 'react-font';
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -34,9 +33,9 @@ function Header({ Icon, wallet, button, profileModal, showProfileModal, hamburge
             </a>
             }
 
-            <a className={classes.title} href="/">
-              <Typography variant="h6" noWrap>
-                <Font family="Poppins"><>Taraxa Community</></Font>
+            <a className={classes.titleContainer} href="/">
+              <Typography variant="h2" noWrap className={classes.title}>
+                <>Taraxa Community</>
               </Typography>
             </a>
             {/* <div className={classes.search}>
