@@ -15,6 +15,7 @@ import RewardCard from "./components/RewardCard";
 import Switch from "./components/Switch";
 import ProfileCard from "./components/ProfileCard";
 import ProfileBasicCard from "./components/ProfileBasicCard";
+import ProfileSubmissionsCard from "./components/ProfileSubmissionsCard";
 import LinkedCards from "./components/LinkedCards";
 import Snackbar from "./components/Snackbar";
 import VerticalRewardCard from "./components/VerticalRewardCard";
@@ -46,6 +47,7 @@ export {
   Switch,
   ProfileCard,
   ProfileBasicCard,
+  ProfileSubmissionsCard,
   LinkedCards,
   Snackbar,
   VerticalRewardCard,
