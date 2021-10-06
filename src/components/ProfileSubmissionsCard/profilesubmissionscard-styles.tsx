@@ -17,6 +17,11 @@ const useStyles = makeStyles({
         margin: 0,
         textAlign: "center",
         fontWeight: "normal",
+        '& div': {
+            display: "inline-block",
+            marginLeft: 10,
+            verticalAlign: "middle",
+        }
     },
     itemsContainer: {
         overflowY: 'scroll',
@@ -30,7 +35,7 @@ const useStyles = makeStyles({
                 textAlign: 'right',
             }
         }
-    }
+    },
 });
 
 export default useStyles;

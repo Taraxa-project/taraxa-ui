@@ -25,7 +25,7 @@ const ProfileSubmissionsCard = ({
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
         <CardContent>
-          <h3 className={classes.title}>{title}</h3>
+          <h3 className={classes.title}>{title}{tooltip && tooltip}</h3>
           <div className={classes.itemsContainer}>
             {itemsContent}
           </div>
