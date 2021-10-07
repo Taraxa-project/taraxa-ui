@@ -2,40 +2,41 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: 280,
-    minHeight: 180,
+    display: "flex",
+    flexDirection: "column",
+    width: 311,
+    minHeight: 340,
     textAlign: "left",
     backgroundColor: '#1E2231',
-    paddingLeft: "2%",
-    paddingRight: "1%",
-    paddingBottom: '2%',
     border: "1px solid #282C3E",
-    marginBottom: '5%'
+    padding: "34px 24px 24px"
+  },
+  content: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: 0
+  },
+  actions: {
+    flexDirection: "column",
+    padding: 0,
+    '& > button': {
+      marginBottom: 0,
+    }
   },
   label: {
-    marginTop: "5%",
-    marginBottom: "5%",
-    wordBreak: 'break-word'
-  },
-  wallet: {
-    fontSize: '0.7777777777777778em',
-    marginTop: "5%",
-    marginBottom: "5%",
+    overflowWrap: "anywhere"
   },
   userDetails: {
-    display: 'grid',
-    gridTemplateColumns:'30% 70%'
+    display: "flex",
   },
   iconContainer: {
     display: 'flex',
     alignItems: 'center',
-  },
-  actions: {
-    display: "grid",
-    marginBottom: "5%"
-  },
-  bottomSpacing: {
-    marginBottom: '5%'
+    justifyContent: 'center',
+    width: 47,
+    height: 47,
   },
   icon: {
     marginBottom: '5%',

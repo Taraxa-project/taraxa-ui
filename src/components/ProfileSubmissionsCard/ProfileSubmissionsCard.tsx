@@ -4,9 +4,8 @@ import theme from "../theme";
 import useStyles from './profilesubmissionscard-styles';
 
 
-export interface ProfileSubmissionsCardProps extends MCardProps  {
+export interface ProfileSubmissionsCardProps extends MCardProps {
   title: string;
-  description?: string;
   tooltip?: JSX.Element;
   itemsContent: JSX.Element;
 };
@@ -14,7 +13,6 @@ export interface ProfileSubmissionsCardProps extends MCardProps  {
 
 const ProfileSubmissionsCard = ({
   title,
-  description,
   tooltip,
   itemsContent,
 }: ProfileSubmissionsCardProps) => {
@@ -24,7 +22,7 @@ const ProfileSubmissionsCard = ({
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
-        <CardContent>
+        <CardContent className={classes.content}>
           <h3 className={classes.title}>{title}{tooltip && tooltip}</h3>
           <div className={classes.itemsContainer}>
             {itemsContent}
