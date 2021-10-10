@@ -53,6 +53,7 @@
     "@rollup/plugin-url": "^6.1.0",
     "@storybook/preset-scss": "^1.0.3",
     "@types/react-modal": "^3.12.1",
+    "jdenticon": "^3.1.1",
     "material-ui-icons": "^1.0.0-beta.36",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
