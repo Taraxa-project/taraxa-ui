@@ -23,7 +23,7 @@ const ProfileCard = ({
   buttonOptions
 }: ProfileCardProps) => {
   const classes = useStyles();
-  const profileIcon = Jdenticon.toSvg(email, 47)
+  const profileIcon = Jdenticon.toSvg(email, 47, {'backColor': '#fff'})
 
   return (
     <ThemeProvider theme={theme}>
