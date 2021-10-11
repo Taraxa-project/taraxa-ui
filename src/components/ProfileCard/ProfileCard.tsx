@@ -1,6 +1,7 @@
 import React from "react";
 import { Card as MCard, CardProps as MCardProps, CardContent, CardActions, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import Font from "react-font";
+import Jdenticon from 'jdenticon';
 
 import theme from "../theme";
 
@@ -22,12 +23,13 @@ const ProfileCard = ({
   buttonOptions
 }: ProfileCardProps) => {
   const classes = useStyles();
+  const profileIcon = Jdenticon.toSvg(email, 28)
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <MCard className={classes.root} elevation={0} variant="outlined">
-        <div className={classes.userDetails}>{Icon && <div className={classes.iconContainer}><Icon /></div>}
+        <div className={classes.userDetails}>{Icon && <div className={classes.iconContainer} dangerouslySetInnerHTML={{__html: profileIcon}}></div>}
           <Font family="Inter">
             <Typography variant="body1" className={classes.label} color="primary">
               {username}
