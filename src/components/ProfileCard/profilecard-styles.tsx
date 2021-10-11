@@ -39,6 +39,10 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     width: 47,
     height: 47,
+    marginRight: 20,
+    '& svg': {
+      borderRadius: '50%',
+    }
   },
   icon: {
     marginBottom: '5%',
