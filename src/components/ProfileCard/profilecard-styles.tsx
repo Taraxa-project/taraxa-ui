@@ -39,6 +39,9 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     width: 47,
     height: 47,
+    backgroundColor: '#fff',
+    borderRadius: '50%',
+    marginRight: 20,
   },
   icon: {
     marginBottom: '5%',
