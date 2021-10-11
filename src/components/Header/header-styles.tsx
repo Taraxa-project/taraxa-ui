@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'flex-end',
     },
     sectionDesktopMobile: {
-      justifyContent: 'space-between',
+      justifyContent: 'end',
     },
     headerIconContainer: {
       backgroundColor: '#202534',
@@ -74,15 +74,17 @@ const useStyles = makeStyles((theme: Theme) =>
       textDecoration: 'none',
     },
     profileModal: {
-      backgroundColor: '#282c3e',
-      border: '1px solid #878ca4',
-      display: 'grid',
-      width: '15%',
-      padding: '1%',
-      marginLeft: '82%',
-      borderRadius: '5px',
-      marginTop: '0.3%',
-      position: 'absolute',
+      "&> div": {
+        backgroundColor: '#282c3e',
+        border: '1px solid #878ca4',
+        display: 'grid',
+        width: '15%',
+        padding: '1%',
+        marginLeft: '82%',
+        borderRadius: '5px',
+        marginTop: '0.3%',
+        position: 'absolute',
+      }
     },
     profileButton: {
       marginBottom: '5%'

@@ -63,7 +63,7 @@ const theme = createTheme({
     MuiToolbar: {
       regular: {
         minHeight: "72px",
-        [defaultTheme.breakpoints.up('sm')]: {
+        [defaultTheme.breakpoints.up('xs')]: {
           minHeight: "72px",
         },
       },
