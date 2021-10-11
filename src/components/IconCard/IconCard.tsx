@@ -10,6 +10,7 @@ export interface IconCardProps extends MCardProps {
   description: string;
   onClickButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   onClickText?: string;
+  disabled?: boolean;
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   tooltip?: JSX.Element;
 };
@@ -21,6 +22,7 @@ const IconCard = ({
   description,
   onClickButton,
   onClickText,
+  disabled,
   Icon,
   id,
   tooltip
@@ -43,7 +45,7 @@ const IconCard = ({
         </CardContent>
         {onClickButton && onClickText &&
           <CardActions className={classes.actions}>
-            <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText}></Button>
+            <Button disableElevation color="secondary" onClick={onClickButton} variant="contained" label={onClickText} disabled={disabled}></Button>
           </CardActions>}
       </MCard>
     </ThemeProvider>
