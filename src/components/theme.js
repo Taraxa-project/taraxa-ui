@@ -7,7 +7,7 @@ const theme = createTheme({
       fontFamily: ["Poppins", "sans-serif"].join(","),
     },
     h2: {
-      fontFamily: ["Poppins", "sans-serif"].join(","),
+      fontFamily: ["Inter", "sans-serif"].join(","),
     },
     h3: {
       fontFamily: ["Poppins", "sans-serif"].join(","),
