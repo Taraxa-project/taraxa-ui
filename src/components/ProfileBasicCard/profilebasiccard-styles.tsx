@@ -28,7 +28,8 @@ const useStyles = makeStyles({
   value: {
     marginTop: "5%",
     marginBottom: "30%",
-    wordBreak: 'break-word'
+    wordBreak: 'break-word',
+    fontWeight: "bold",
   },
   description: {
     marginTop: "5%",

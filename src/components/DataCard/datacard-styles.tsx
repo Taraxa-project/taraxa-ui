@@ -26,6 +26,7 @@ const useStyles = makeStyles({
   title: {
     marginBottom: '5%',
     fontWeight: 700,
+    wordBreak: 'break-all',
   },
   iconContainer: {
     display: 'flex',

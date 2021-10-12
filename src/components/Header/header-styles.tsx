@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'flex-end',
     },
     sectionDesktopMobile: {
-      justifyContent: 'end',
+      justifyContent: 'flex-end',
     },
     headerIconContainer: {
       backgroundColor: '#202534',

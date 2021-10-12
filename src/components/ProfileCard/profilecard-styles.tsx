@@ -26,7 +26,8 @@ const useStyles = makeStyles({
     }
   },
   label: {
-    overflowWrap: "anywhere"
+    overflowWrap: "anywhere",
+    wordBreak: "break-all"
   },
   userDetails: {
     display: "flex",
