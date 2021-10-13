@@ -10,11 +10,9 @@ import { useMediaQuery } from 'react-responsive';
 
 export interface HeaderProps extends AppBarProps {
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  profileModal?: JSX.Element;
-  showProfileModal?: boolean;
 };
 
-function Header({ Icon, profileModal, showProfileModal, children, ...props }: HeaderProps) {
+function Header({ Icon, children, ...props }: HeaderProps) {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
@@ -53,7 +51,6 @@ function Header({ Icon, profileModal, showProfileModal, children, ...props }: He
 
         </Toolbar>
       </AppBar>
-      {profileModal && showProfileModal && <div className={classes.profileModal}>{profileModal}</div>}
     </ThemeProvider >
   );
 }
