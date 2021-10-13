@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     margin: 0,
     textAlign: "center",
     fontWeight: "normal",
-    '& div': {
+    '& span': {
       display: "inline-block",
       marginLeft: 10,
       verticalAlign: "middle",
