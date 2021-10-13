@@ -4,23 +4,19 @@ import theme from "../theme";
 
 
 export interface TextProps extends TypographyProps {
-  label: string;
+  label?: string;
 };
 
 const Text = ({
   label,
-  variant,
-  color,
-  id,
-  className,
-  style,
-  onClick
+  children,
+  ...props
 }: TextProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-        <Typography onClick={onClick} variant={variant} color={color} id={id} className={className} style={style}>
-          {label}
+        <Typography {...props}>
+          {label ? label : children}
         </Typography>
     </ThemeProvider>
   );

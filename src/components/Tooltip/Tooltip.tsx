@@ -2,7 +2,7 @@ import React from "react";
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import theme from "../theme";
 import useStyles from "./tooltip-styles";
-import {Tooltip as MTooltip} from '@material-ui/core';
+import { Tooltip as MTooltip } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Text from "../Text";
 
@@ -32,21 +32,19 @@ const Tooltip = ({
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-    <CssBaseline />
-      <div>
-        <HtmlTooltip
-          className={className}
-          id={id}
-          title={
-            <div className={classes.tooltip}>
-              <Text label={title} variant="body1" color="primary" />
-            </div>
-          }
-          enterTouchDelay={100}
-        >
-          <span><Icon/></span>
-        </HtmlTooltip>
-      </div>
+      <CssBaseline />
+      <HtmlTooltip
+        className={className}
+        id={id}
+        title={
+          <div className={classes.tooltip}>
+            <Text label={title} variant="body1" color="primary" />
+          </div>
+        }
+        enterTouchDelay={100}
+      >
+        <span><Icon /></span>
+      </HtmlTooltip>
     </ThemeProvider>
   );
 };
