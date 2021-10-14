@@ -4,6 +4,7 @@ const useStyles = makeStyles({
   root: {
     fontSize: '18px',
     textAlign: 'center',
+    marginTop: 5,
   },
 });
 

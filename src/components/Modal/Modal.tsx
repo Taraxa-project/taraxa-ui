@@ -15,6 +15,7 @@ export interface ModalProps  {
   ) => void;
   id?: string;
   closeIcon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  styles?: object;
 };
 
 function getWindowDimensions() {
@@ -41,10 +42,10 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-const Modal = ({ children, show, title, parentElementID, onRequestClose, id, closeIcon }: ModalProps) => {
+const Modal = ({ children, show, title, parentElementID, onRequestClose, id, closeIcon, styles }: ModalProps) => {
   const { height, width } = useWindowDimensions();
   
-  const customStyles = {
+  let customStyles = {
     content: {
       top: '50%',
       left: '50%',
@@ -65,6 +66,10 @@ const Modal = ({ children, show, title, parentElementID, onRequestClose, id, clo
       zIndex: 2000,
     }
   };
+
+  if (styles) {
+    customStyles = {...customStyles, ...styles}
+  }
 
   RModal.setAppElement(`#${parentElementID}`);
 
