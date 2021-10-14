@@ -45,10 +45,10 @@ const Footer = ({
         </div>
         }
         {links &&
-          <div className={isMobile ? classes.footerListMobile : classes.footerList}>
+          <div className={classes.footerList}>
             {links.map(link => (
-              <a key={link.label} href={link.link} target="_blank">
-                <Text label={link.label} variant="body1" color="textSecondary" className={classes.footerParagraph} />
+              <a key={link.label} href={link.link} target="_blank" className={classes.footerParagraph}>
+                <Text label={link.label} variant="body1" color="textSecondary" />
               </a>
             ))}
           </div>

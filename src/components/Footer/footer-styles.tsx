@@ -1,4 +1,4 @@
-import {  makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -50,17 +50,15 @@ const useStyles = makeStyles((theme: Theme) =>
     footerList: {
       gridRow: 4,
       display: 'flex',
-      marginBottom: '5%',
-      textAlign: 'left'
-    },
-    footerListMobile: {
-      gridRow: 4,
-      display: 'flex',
-      marginBottom: '5%',
+      marginBottom: '64px',
       textAlign: 'left'
     },
     footerParagraph: {
       cursor: 'pointer',
+      textDecoration: 'none',
+      "& > p": {
+        fontSize: '14px',
+      }
     },
     mobileIcons: {
       width: '100%',
@@ -77,10 +75,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     footerLi: {
       display: 'flex',
-      marginLeft: '16px',
+      marginRight: '16px',
       width: '40px',
       height: '40px',
       alignItems: 'center',
+      '&:last-child': {
+        marginRight: 0,
+      }
     },
     footerSVG: {
       textAlign: 'left',
