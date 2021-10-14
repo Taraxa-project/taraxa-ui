@@ -42,7 +42,7 @@ function useWindowDimensions() {
 }
 
 const Modal = ({ children, show, title, parentElementID, onRequestClose, id, closeIcon }: ModalProps) => {
-  const { height, width } = useWindowDimensions();
+  const { height } = useWindowDimensions();
   
   const customStyles = {
     content: {

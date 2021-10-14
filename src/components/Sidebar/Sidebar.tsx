@@ -4,6 +4,8 @@ import { createStyles, CssBaseline, Drawer, DrawerProps, List, makeStyles, Theme
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+import Text from '../Text';
+
 import theme from "../theme";
 
 import '../app.scss';
@@ -23,9 +25,21 @@ const useStyles = makeStyles((theme: Theme) =>
       flexShrink: 0,
     },
     drawerPaper: {
+      display: 'flex',
       width: drawerWidth,
       position: 'inherit',
-      backgroundColor: '#151823 !important'
+      backgroundColor: '#151823 !important',
+      "& > div:first-child": {
+        flex: 1
+      },
+      "& > div:last-child": {
+        padding: '64px 0'
+      }
+    },
+    drawerPaperMobile: {
+      "& > div:last-child": {
+        display: 'none'
+      }
     },
     drawerContainer: {
       overflow: 'auto',
@@ -70,28 +84,41 @@ const Sidebar = ({
 }: SidebarProps) => {
   const classes = useStyles();
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+  let paperClasses = [classes.drawerPaper];
+
+  if(isMobile) {
+    paperClasses = [
+      ...paperClasses,
+      classes.drawerPaperMobile
+    ];
+  }
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Drawer className="sidebar"
         variant={!isMobile ? 'permanent' : "temporary"}
-        classes={{ paper: classes.drawerPaper }}  anchor={isMobile ? "right" : "left"} elevation={0} {...props}>
-        <List disablePadding={disablePadding} dense={dense} id="sidebarList" className={className ? className : ''}>
-          {items.map((sidebarItem, index) => (
-            <SidebarItem
-              key={`${sidebarItem.label}${index}`}
-              depthStep={depthStep ? depthStep : 10}
-              depth={depth ? depth : 0}
-              subItem={false}
-              items={sidebarItem.items ? sidebarItem.items : []}
-              label={sidebarItem.label ? sidebarItem.label : ""}
-              Link={sidebarItem.Link ? sidebarItem.Link : undefined}
-              name={sidebarItem.name ? sidebarItem.name : undefined}
-            />
-          ))}
-        </List>
-        {children}
+        classes={{ paper: paperClasses.join(' ') }} anchor={isMobile ? "right" : "left"} elevation={0} {...props}>
+        <div>
+          <List disablePadding={disablePadding} dense={dense} id="sidebarList" className={className ? className : ''}>
+            {items.map((sidebarItem, index) => (
+              <SidebarItem
+                key={`${sidebarItem.label}${index}`}
+                depthStep={depthStep ? depthStep : 10}
+                depth={depth ? depth : 0}
+                subItem={false}
+                items={sidebarItem.items ? sidebarItem.items : []}
+                label={sidebarItem.label ? sidebarItem.label : ""}
+                Link={sidebarItem.Link ? sidebarItem.Link : undefined}
+                name={sidebarItem.name ? sidebarItem.name : undefined}
+              />
+            ))}
+          </List>
+          {children}
+        </div>
+        <div>
+          <Text label={`© Taraxa ${new Date().getFullYear()}`} variant="body1" color="textSecondary" />
+        </div>
       </Drawer>
     </ThemeProvider>
   );
